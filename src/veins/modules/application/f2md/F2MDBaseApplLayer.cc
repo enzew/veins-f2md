@@ -76,6 +76,9 @@ void F2MDBaseApplLayer::initialize(int stage)
         receivedBSMs = 0;
         receivedWSAs = 0;
         receivedWSMs = 0;
+
+        previousLaneId = mobility->getLaneId(); //get lane id at initialization
+
     }
     else if (stage == 1) {
 
