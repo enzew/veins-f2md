@@ -530,6 +530,7 @@ void JosephVeinsApp::setMDApp(mdAppTypes::App appTypeV1,
 static double totalGenuine = 0;
 static double totalLocalAttacker = 0;
 static double totalGlobalAttacker = 0;
+//诱发misbehavior
 mbTypes::Mbs JosephVeinsApp::induceMisbehavior(double localAttacker,
     double globalAttacker)
 {
@@ -537,7 +538,7 @@ mbTypes::Mbs JosephVeinsApp::induceMisbehavior(double localAttacker,
     if (simTime().dbl() < params.START_ATTACK) {
         return mbTypes::Genuine;
     }
-
+//第一个Genuine的vehicle
     if ((totalLocalAttacker + totalGenuine) == 0) {
         totalGenuine++;
         return mbTypes::Genuine;
@@ -1397,6 +1398,7 @@ void JosephVeinsApp::handleReportProtocol(bool lastTimeStep)
         }
     }
 }
+
 void JosephVeinsApp::handlePositionUpdate(cObject* obj)
 {
     F2MDBaseApplLayer::handlePositionUpdate(obj);
