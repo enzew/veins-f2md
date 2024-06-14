@@ -1407,6 +1407,17 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
 
     ChannelMobilityPtrType const mobility = check_and_cast<
         ChannelMobilityPtrType>(obj);
+    //get current lanid
+    std::string currentLaneId = mobility->getLaneId();
+
+    // Detect lane change
+    bool laneChanged = (currentLaneId != previousLaneId);
+    previousLaneId = currentLaneId;
+    
+    if (laneChanged) {
+        // Perform the attack if a lane change is detected
+        return mbTypes::LocalAttacker;
+    }
 
     RelativeOffsetConf relativeOffsetConfidence = RelativeOffsetConf(
         &ConfPosMax, &ConfSpeedMax, &ConfHeadMax, &ConfAccelMax,
