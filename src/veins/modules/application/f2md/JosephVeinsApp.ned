@@ -25,6 +25,7 @@ simple JosephVeinsApp extends F2MDBaseApplLayer
     string serialNumber = default("IRT-DEMO");
     string savePath = default("../../../../mdmSave/");
 
+    bool enableMTA = default(false);
     bool veremiConf = default(true);
     bool randomConf = default(false);
     bool variableConf = default(false);
