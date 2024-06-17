@@ -1416,7 +1416,9 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
     
     if (laneChanged) {
         // Perform the attack if a lane change is detected
-        return mbTypes::LocalAttacker;
+       if (params.enableMTA) {
+        	return mbTypes::LocalAttacker;
+	    } 
     }
 
     RelativeOffsetConf relativeOffsetConfidence = RelativeOffsetConf(
