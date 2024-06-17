@@ -1408,7 +1408,7 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
     ChannelMobilityPtrType const mobility = check_and_cast<
         ChannelMobilityPtrType>(obj);
     //get current lanid
-    std::string currentLaneId = mobility->getLaneId();
+    std::string currentLaneId = traciVehicle->getLaneID();
 
     // Detect lane change
     bool laneChanged = (currentLaneId != previousLaneId);
@@ -1417,7 +1417,7 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
     if (laneChanged) {
         // Perform the attack if a lane change is detected
        if (params.enableMTA) {
-        	return mbTypes::LocalAttacker;
+        	mbTypes::LocalAttacker;
 	    } 
     }
 
