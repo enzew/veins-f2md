@@ -38,6 +38,7 @@ public:
     std::string serialNumber = "IRT-DEMO";
     std::string savePath = "../../../../mdmSave/";
 
+    bool enableMTA = false; //Maneuver Triggered Attacks
     bool veremiConf = true;
     bool randomConf = false;
     bool variableConf = false;
