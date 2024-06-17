@@ -217,6 +217,7 @@ void JosephVeinsApp::initialize(int stage)
 
         myWidth = traciVehicle->getWidth();
         myLength = traciVehicle->getLength();
+	previousLaneId = traciVehicle->getLaneId();
 
         myMdType = induceMisbehavior(params.LOCAL_ATTACKER_PROB,
             params.GLOBAL_ATTACKER_PROB);
@@ -1408,7 +1409,7 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
     ChannelMobilityPtrType const mobility = check_and_cast<
         ChannelMobilityPtrType>(obj);
     //get current lanid
-    std::string currentLaneId = traciVehicle->getLaneID();
+    std::string currentLaneId = traciVehicle->getLaneId();
 
     // Detect lane change
     bool laneChanged = (currentLaneId != previousLaneId);
@@ -1417,7 +1418,7 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
     if (laneChanged) {
         // Perform the attack if a lane change is detected
        if (params.enableMTA) {
-        	mbTypes::LocalAttacker;
+        	myMdType = mbTypes::LocalAttacker;
 	    } 
     }
 
