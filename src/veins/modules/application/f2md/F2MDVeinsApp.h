@@ -136,6 +136,7 @@ protected:
     virtual void handleSelfMsg(cMessage* msg);
     virtual void handlePositionUpdate(cObject* obj);
     std::string previousLaneId; //a new member variable for detecting lane changing
+    virtual void initiateLaneChangeAttack(); //attack function
 
     virtual void populateWSM(BaseFrame1609_4* wsm, LAddress::L2Type rcvId = LAddress::L2BROADCAST(), int serial = 0);
 
