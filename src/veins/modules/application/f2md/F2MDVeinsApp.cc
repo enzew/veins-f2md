@@ -1409,7 +1409,7 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
     ChannelMobilityPtrType const mobility = check_and_cast<
         ChannelMobilityPtrType>(obj);
     //get current lanid
-    std::string currentLaneId = traciVehicle->getLaneId();
+    std::string currentLaneId =traciVehicle->getLaneId();
 
     // Detect lane change
     bool laneChanged = (currentLaneId != previousLaneId);
@@ -1417,9 +1417,14 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
     
     if (laneChanged) {
         // Perform the attack if a lane change is detected
-       if (params.enableMTA) {
-        	myMdType = mbTypes::LocalAttacker;
-	    } 
+        if (params.enableMTA) {
+                //Random selected as attackers
+            if (genLib.RandomDouble(0, 1) < 0.3){
+                myMdType = mbTypes::LocalAttacker;
+                //myAttackType = params.LOCAL_ATTACK_TYPE;
+                initiateLaneChangeAttack();
+            }
+        }
     }
 
     RelativeOffsetConf relativeOffsetConfidence = RelativeOffsetConf(
@@ -1501,6 +1506,60 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
     //the vehicle has moved. Code that reacts to new positions goes here.
     //member variables such as currentPosition and currentSpeed are updated in the parent class
 }
+
+//Attack function for lanechanging triggered
+void JosephVeinsApp::initiateLaneChangeAttack() {
+    if (params.UseAttacksServer) {
+        myAttackType = localAttackServer.getNextAttack();
+    }
+    else if (params.MixLocalAttacks) {
+        int AtLiSize = sizeof(params.MixLocalAttacksList) / sizeof(params.MixLocalAttacksList[0]);
+        int localAttackIndex = 0;
+        if (params.RandomLocalMix) {
+            localAttackIndex = genLib.RandomInt(0, AtLiSize - 1);
+        }
+        else {
+            if (LastLocalAttackIndex < (AtLiSize - 1)) {
+                localAttackIndex = LastLocalAttackIndex + 1;
+                LastLocalAttackIndex = localAttackIndex;
+            }
+            else {
+                localAttackIndex = 0;
+                LastLocalAttackIndex = 0;
+            }
+        }
+        myAttackType = params.MixLocalAttacksList[localAttackIndex];
+    }
+    else {
+        myAttackType = params.LOCAL_ATTACK_TYPE;
+    }
+
+    std::cout << "=+#=+#=+#=+#=+#=+#=+#=+#+#=+#=+#=+#=+#=+#=+#=+#=+#=+#=+#=+#=+# " << "\n";
+    std::cout << "=+#=+#=+#=+#=+#=+#=+#=+# Maneuver Triggered ATTACKER =+#=+#=+#=+#=+#=+#=+#=+# " << myPseudonym << " : " << attackTypes::AttackNames[myAttackType] << "\n";
+    std::cout << "=+#=+#=+#=+#=+#=+#=+#=+#+#=+#=+#=+#=+#=+#=+#=+#=+#=+#=+#=+#=+# " << "\n";
+
+    mdAttack = MDAttack();
+    mdAttack.setBeaconInterval(&beaconInterval);
+    mdAttack.setCurHeading(&curHeading);
+    mdAttack.setCurHeadingConfidence(&curHeadingConfidence);
+    mdAttack.setCurPosition(&curPosition);
+    mdAttack.setCurPositionConfidence(&curPositionConfidence);
+    mdAttack.setCurSpeed(&curSpeed);
+    mdAttack.setCurSpeedConfidence(&curSpeedConfidence);
+    mdAttack.setCurAccel(&curAccel);
+    mdAttack.setCurAccelConfidence(&curAccelConfidence);
+    mdAttack.setDetectedNodes(&detectedNodes);
+    mdAttack.setMyBsm(myBsm);
+    mdAttack.setMyBsmNum(&myBsmNum);
+    mdAttack.setMyLength(&myLength);
+    mdAttack.setMyPseudonym(&myPseudonym);
+    mdAttack.setMyWidth(&myWidth);
+    mdAttack.setPcPolicy(&pcPolicy);
+
+    mdAttack.init(myAttackType, MaxRandomPosX, MaxRandomPosY, &params);
+    traciVehicle->setColor(TraCIColor(255, 0, 0, 255));
+}
+
 
 // code is based on TracingApp::populateWSM(WaveShortMessage* wsm, int rcvId, int serial)
 void JosephVeinsApp::populateWSM(BaseFrame1609_4* wsm, LAddress::L2Type rcvId,
