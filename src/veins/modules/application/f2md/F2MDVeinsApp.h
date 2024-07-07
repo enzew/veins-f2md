@@ -118,6 +118,7 @@ static double VeReMiSliceStartTime = 0;
 class JosephVeinsApp: public F2MDBaseApplLayer {
 private:
     GeneralLib genLib = GeneralLib();
+    std::unordered_map<unsigned long, std::string> vehicleLaneMap; // new member var for lanechange detection
 public:
     NodeTable detectedNodes;
 
@@ -136,6 +137,7 @@ protected:
     virtual void handleSelfMsg(cMessage* msg);
     virtual void handlePositionUpdate(cObject* obj);
     std::string previousLaneId; //a new member variable for detecting lane changing
+    double previousAngle; //a new member variable for detecting turning
     virtual void initiateLaneChangeAttack(); //attack function
 
     virtual void populateWSM(BaseFrame1609_4* wsm, LAddress::L2Type rcvId = LAddress::L2BROADCAST(), int serial = 0);
@@ -246,6 +248,8 @@ protected:
     double deltaSpeed = 0;
     double deltaHeading = 0;
     double deltaAccel = 0;
+
+    bool laneChanged;
 
     /* F2MD */
 
