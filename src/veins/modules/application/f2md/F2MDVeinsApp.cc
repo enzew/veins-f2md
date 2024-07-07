@@ -23,6 +23,8 @@ void JosephVeinsApp::initialize(int stage)
         params.serialNumber = par("serialNumber").stdstringValue();
         params.savePath = par("savePath").stdstringValue();
 
+        params.enableMTA = par("enableMTA");
+	params.enableDT = par("enableDT");
         params.veremiConf = par("veremiConf");
         params.randomConf = par("randomConf");
         params.variableConf = par("variableConf");
@@ -217,7 +219,9 @@ void JosephVeinsApp::initialize(int stage)
 
         myWidth = traciVehicle->getWidth();
         myLength = traciVehicle->getLength();
-	previousLaneId = traciVehicle->getLaneId();
+        previousLaneId = traciVehicle->getLaneId(); //get lane id at initialization
+        previousAngle = traciVehicle->getAngle();   //get Angle at initialization
+        laneChanged = false; //initialization for lane changed para
 
         myMdType = induceMisbehavior(params.LOCAL_ATTACKER_PROB,
             params.GLOBAL_ATTACKER_PROB);
@@ -531,7 +535,6 @@ void JosephVeinsApp::setMDApp(mdAppTypes::App appTypeV1,
 static double totalGenuine = 0;
 static double totalLocalAttacker = 0;
 static double totalGlobalAttacker = 0;
-//诱发misbehavior
 mbTypes::Mbs JosephVeinsApp::induceMisbehavior(double localAttacker,
     double globalAttacker)
 {
@@ -539,7 +542,7 @@ mbTypes::Mbs JosephVeinsApp::induceMisbehavior(double localAttacker,
     if (simTime().dbl() < params.START_ATTACK) {
         return mbTypes::Genuine;
     }
-//第一个Genuine的vehicle
+
     if ((totalLocalAttacker + totalGenuine) == 0) {
         totalGenuine++;
         return mbTypes::Genuine;
@@ -571,6 +574,18 @@ void JosephVeinsApp::onBSM(BasicSafetyMessage* bsm)
     }
 
     unsigned long senderPseudonym = bsm->getSenderPseudonym();
+    std::string currentLaneId = bsm->getLaneId(); //get lanid from bsm
+    // check and update laneid
+    if (vehicleLaneMap.find(senderPseudonym) != vehicleLaneMap.end()) {
+          std::string previousLaneId = vehicleLaneMap[senderPseudonym];
+          if (previousLaneId != currentLaneId) {
+              // lane changed
+              std::cout << "Vehicle " << senderPseudonym << " has changed lanes from "
+                        << previousLaneId << " to " << currentLaneId << std::endl;
+              // 在这里可以添加变道检测后的处理逻辑
+          }
+    }
+      vehicleLaneMap[senderPseudonym] = currentLaneId;
 
     if (params.EnableV1) {
         LocalMisbehaviorDetection(bsm, 1);
@@ -616,6 +631,7 @@ void JosephVeinsApp::onBSM(BasicSafetyMessage* bsm)
 void JosephVeinsApp::treatAttackFlags()
 {
 
+
     if (myMdType == mbTypes::LocalAttacker) {
         attackBsm = mdAttack.launchAttack(myAttackType, &linkControl);
 
@@ -624,21 +640,26 @@ void JosephVeinsApp::treatAttackFlags()
         }
 
         if (isAccusedNode(myPseudonym)) {
-            traciVehicle->setColor(TraCIColor(0, 0, 0, 255));
+            traciVehicle->setColor(TraCIColor(0, 0, 0, 255)); //black
         }
         else {
-            traciVehicle->setColor(TraCIColor(255, 0, 0, 255));
+            traciVehicle->setColor(TraCIColor(255, 0, 0, 255)); //red
         }
     }
     else {
+
+        if (laneChanged) {
+            //set maneuver color as azure
+            traciVehicle->setColor(TraCIColor(240, 255, 255, 255));
+        }
         if (isTargetNode(myPseudonym)) {
-            traciVehicle->setColor(TraCIColor(255, 255, 0, 255));
+            traciVehicle->setColor(TraCIColor(255, 255, 0, 255)); //yellow
         }
         else {
-            traciVehicle->setColor(TraCIColor(0, 255, 0, 255));
+            traciVehicle->setColor(TraCIColor(0, 255, 0, 255)); //green
         }
         if (isAccusedNode(myPseudonym)) {
-            traciVehicle->setColor(TraCIColor(0, 0, 255, 255));
+            traciVehicle->setColor(TraCIColor(0, 0, 255, 255)); //blue
         }
     }
 
@@ -652,6 +673,8 @@ void JosephVeinsApp::treatAttackFlags()
         clearAccusedNodes();
     }
 }
+
+
 
 void JosephVeinsApp::LocalMisbehaviorDetection(BasicSafetyMessage* bsm,
     int version)
@@ -1399,7 +1422,6 @@ void JosephVeinsApp::handleReportProtocol(bool lastTimeStep)
         }
     }
 }
-
 void JosephVeinsApp::handlePositionUpdate(cObject* obj)
 {
     F2MDBaseApplLayer::handlePositionUpdate(obj);
@@ -1408,14 +1430,21 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
 
     ChannelMobilityPtrType const mobility = check_and_cast<
         ChannelMobilityPtrType>(obj);
-    //get current lanid
-    std::string currentLaneId =traciVehicle->getLaneId();
+
+    
+    std::string currentLaneId =traciVehicle->getLaneId(); //get current laneid
+    double currentAngle = traciVehicle->getAngle();  //get angle 
+
 
     // Detect lane change
-    bool laneChanged = (currentLaneId != previousLaneId);
+    // bool laneChanged = (currentLaneId != previousLaneId);
+    laneChanged = (currentLaneId != previousLaneId);
     previousLaneId = currentLaneId;
+
     
     if (laneChanged) {
+        //set maneuver color as azure
+        traciVehicle->setColor(TraCIColor(240, 255, 255, 255));
         // Perform the attack if a lane change is detected
         if (params.enableMTA) {
                 //Random selected as attackers
@@ -1426,6 +1455,20 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
             }
         }
     }
+
+    //Detect turning
+    double angleThreshold = 15.0;  //angle threshold
+   
+    if (fabs(currentAngle - previousAngle) > angleThreshold) {
+    	// turning
+	if (params.enableDT) {
+
+   	    myMdType = mbTypes::LocalAttacker;
+            //myAttackType = params.LOCAL_ATTACK_TYPE;
+            initiateLaneChangeAttack();
+	}
+    }
+
 
     RelativeOffsetConf relativeOffsetConfidence = RelativeOffsetConf(
         &ConfPosMax, &ConfSpeedMax, &ConfHeadMax, &ConfAccelMax,
@@ -1507,7 +1550,7 @@ void JosephVeinsApp::handlePositionUpdate(cObject* obj)
     //member variables such as currentPosition and currentSpeed are updated in the parent class
 }
 
-//Attack function for lanechanging triggered
+
 void JosephVeinsApp::initiateLaneChangeAttack() {
     if (params.UseAttacksServer) {
         myAttackType = localAttackServer.getNextAttack();
@@ -1561,6 +1604,8 @@ void JosephVeinsApp::initiateLaneChangeAttack() {
 }
 
 
+
+
 // code is based on TracingApp::populateWSM(WaveShortMessage* wsm, int rcvId, int serial)
 void JosephVeinsApp::populateWSM(BaseFrame1609_4* wsm, LAddress::L2Type rcvId,
     int serial)
@@ -1593,6 +1638,13 @@ void JosephVeinsApp::populateWSM(BaseFrame1609_4* wsm, LAddress::L2Type rcvId,
         bsm->setSenderLength(myLength);
 
         bsm->setSenderRealId(myId);
+ 	    // get laneid and add it to bsm
+        //std::string LaneId = traciVehicle->getLaneId();
+        //bsm->setLaneId(std::stoi(LaneId));
+        std::string laneIdStr = traciVehicle->getLaneId();
+        bsm->setLaneId(laneIdStr);
+
+
         addMyBsm(*bsm);
         // Genuine
 
