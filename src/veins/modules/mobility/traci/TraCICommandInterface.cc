@@ -310,6 +310,11 @@ std::list<std::string> TraCICommandInterface::Route::getRoadIds()
     return traci->genericGetStringList(CMD_GET_ROUTE_VARIABLE, routeId, VAR_EDGES, RESPONSE_GET_ROUTE_VARIABLE);
 }
 
+double TraCICommandInterface::Vehicle::getAngle()
+{
+    return traci->genericGetDouble(CMD_GET_VEHICLE_VARIABLE, nodeId, VAR_ANGLE, RESPONSE_GET_VEHICLE_VARIABLE);
+}
+
 void TraCICommandInterface::Vehicle::changeRoute(std::string roadId, simtime_t travelTime)
 {
     if (travelTime >= 0) {
