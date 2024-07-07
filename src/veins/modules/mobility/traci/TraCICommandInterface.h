@@ -159,6 +159,7 @@ public:
         double getHeight();
         double getAccel();
         double getDeccel();
+        double getAngle(); //get angle
 
         void setParameter(const std::string& parameter, int value);
         void setParameter(const std::string& parameter, double value);
