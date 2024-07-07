@@ -9,264 +9,201 @@
  * All rights reserved.
  *******************************************************************************/
 
-#ifndef __VEINS_JOSEPHVEINSAPP_H_
-#define __VEINS_JOSEPHVEINSAPP_H_
+#ifndef __VEINS_MDParameters_H_
+#define __VEINS_MDParameters_H_
+#include <veins/modules/application/f2md/mdEnumTypes/AttackTypes.h>
+#include <veins/modules/application/f2md/mdEnumTypes/MbTypes.h>
+#include <veins/modules/application/f2md/mdEnumTypes/MdAppTypes.h>
+#include <veins/modules/application/f2md/mdEnumTypes/MdChecksVersionTypes.h>
+#include <veins/modules/application/f2md/mdEnumTypes/PseudoChangeTypes.h>
+#include <veins/modules/application/f2md/mdEnumTypes/ReportTypes.h>
 
-#include <math.h>
-#include <omnetpp.h>
-#include "F2MDBaseApplLayer.h"
-#include <veins/modules/application/f2md/mdChecks/CaTChChecks.h>
-#include <veins/modules/application/f2md/mdChecks/ExperiChecks.h>
-#include <veins/modules/application/f2md/mdChecks/LegacyChecks.h>
+#define MAX_TARGET_LENGTH 1000
+#define MAX_ACCUSED_LENGTH 1000
+#define MYBSM_SIZE 20
+#define MAX_INTER_NUM 10
+#define MAX_BSM_LENGTH 20
+#define MAX_MDM_LENGTH 20
+#define MAX_REP_PSEUDOS 1000
+#define MAX_NODES_LENGTH 200
+#define MAX_DETECTED_NODES 5000
+#define MAX_DETECTED_NODES_COOP 100000
+#define MAX_PSEUDO_LIST 100
+#define MAX_SYBIL_NUM 20
+#define MAX_STALE_NUM 120
 
-using namespace omnetpp;
-using namespace veins;
-
-#include <veins/modules/application/f2md/mdMessages/BasicSafetyMessage_m.h>
-
-#include <veins/modules/application/f2md/mdSupport/GeneralLib.h>
-#include <veins/modules/application/f2md/mdSupport/RelativeOffset.h>
-#include <veins/modules/application/f2md/mdSupport/RelativeOffsetConf.h>
-#include <veins/modules/application/f2md/mdStats/MDStatistics.h>
-
-#include <veins/modules/application/f2md/mdApplications/MDApplication.h>
-#include <veins/modules/application/f2md/mdApplications/ThresholdApp.h>
-#include <veins/modules/application/f2md/mdApplications/AggregationApp.h>
-#include <veins/modules/application/f2md/mdApplications/BehavioralApp.h>
-#include <veins/modules/application/f2md/mdApplications/CooperativeApp.h>
-#include <veins/modules/application/f2md/mdApplications/MachineLearningApp.h>
-#include <veins/modules/application/f2md/mdApplications/ExperiApp.h>
-
-#include <veins/modules/application/f2md/mdSupport/VarThrePrintable.h>
-#include <veins/modules/application/f2md/mdSupport/XmlWriter.h>
-
-#include <veins/modules/application/f2md/mdReport/OneMessageReport.h>
-#include <veins/modules/application/f2md/mdReport/EvidenceReport.h>
-#include <veins/modules/application/f2md/mdReport/ProtocolReport.h>
-#include <veins/modules/application/f2md/mdReport/BasicCheckReport.h>
-#include <veins/modules/application/f2md/mdReport/ProtocolEnforcer.h>
-
-#include <ctime>
-#include <chrono>
-using namespace std::chrono;
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <linux/limits.h>
-
-#include <veins/modules/application/f2md/mdSupport/BsmPrintable.h>
-#include <veins/modules/application/f2md/mdSupport/VeReMiPrintable.h>
-#include <veins/modules/application/f2md/mdSupport/LocalAttackServer.h>
-
-#include <veins/modules/application/f2md/mdPCPolicies/PCPolicy.h>
-#include <veins/modules/application/f2md/mdAttacks/MDAttack.h>
-#include <veins/modules/application/f2md/mdAttacks/MDGlobalAttack.h>
-
-#include <veins/modules/application/f2md/mdSupport/HTTPRequest.h>
-
-#include <veins/modules/application/f2md/F2MDParameters.h>
-
-#include <unordered_map>
-
-#define mlHostV1 "localhost"
-#define mlHostV2 "localhost"
-#define mlPortV1 9997
-#define mlPortV2 9998
-
-static unsigned long targetNodes[MAX_TARGET_LENGTH];
-static int targetNodesLength = 0;
-static double targetClearTime = 0;
-static unsigned long accusedNodes[MAX_ACCUSED_LENGTH];
-static int accusedNodesLength = 0;
-static double accusedClearTime = 0;
-
-static bool linkInit = false;
-static LinkControl linkControl = LinkControl();
-
-static std::unordered_map<LAddress::L2Type,veins::Coord> realDynamicMap;
-
-static bool setDate = false;
-static std::string curDate;
-
-BsmCheck bsmCheckV1, bsmCheckV2;
-
-static double meanTimeV1, meanTimeV2 = 0;
-static unsigned long numTimeV1, numTimeV2 = 0;
-
-static double deltaTV1, deltaTV2, deltaTVS1, deltaTVS2 = 0;
-static bool initV1, initV2 = false;
-
-static MDStatistics mdStats = MDStatistics();
-static VarThrePrintable varThrePrintableV1 = VarThrePrintable("AppV1");
-static VarThrePrintable varThrePrintableV2 = VarThrePrintable("AppV2");
-
-static CooperativeApp CoopV1 = CooperativeApp(1, 0.5);
-static CooperativeApp CoopV2 = CooperativeApp(2, 0.5);
-
-static std::string attackHost = "localhost";
-//static std::string attackHost = "192.168.60.144";
-static int attackPort = 9975;
-static LocalAttackServer localAttackServer = LocalAttackServer(attackPort, attackHost);
-
-static F2MDParameters params;
-
-static int LastLocalAttackIndex = -1;
-static double VeReMiSliceStartTime = 0;
-
-
-
-class JosephVeinsApp: public F2MDBaseApplLayer {
-private:
-    GeneralLib genLib = GeneralLib();
-    std::unordered_map<unsigned long, std::string> vehicleLaneMap; // new member var for lanechange detection
+class F2MDParameters {
 public:
-    NodeTable detectedNodes;
+    //Simulation Parameters
+    std::string serialNumber = "IRT-DEMO";
+    std::string savePath = "../../../../mdmSave/";
 
-public:
-    virtual void initialize(int stage);
-    virtual void finish();
-protected:
+    bool enableMTA = false; //Maneuver Triggered Attack
+    bool enableDT = false;  //Detecting Turning Triggered Attack
+    bool veremiConf = true;
+    bool randomConf = false;
+    bool variableConf = false;
+    double confPos = 10.0;
+    double confSpd = 0.05;
+    double confHea = 20.0;
+    double confAcc = 0.01;
+    double confPrec = 100.0;
+    double minConf = 0.20; //20%
 
-    MDApplication *AppV1;
-    MDApplication *AppV2;
+    double SAVE_PERIOD = 10; //60 seconds
+    double PRINT_PERIOD = 60; //60 seconds
 
-    virtual void onBSM(BasicSafetyMessage* bsm);
-    virtual void onWSM(BaseFrame1609_4* wsm);
-    virtual void onWSA(DemoServiceAdvertisment* wsa);
+    double START_SAVE = 0; //60 seconds
+    double START_ATTACK = 10; //60 seconds
 
-    virtual void handleSelfMsg(cMessage* msg);
-    virtual void handlePositionUpdate(cObject* obj);
-    std::string previousLaneId; //a new member variable for detecting lane changing
-    double previousAngle; //a new member variable for detecting turning
-    virtual void initiateLaneChangeAttack(); //attack function
+    reportTypes::Report REPORT_VERSION = reportTypes::ProtocolReport;
 
-    virtual void populateWSM(BaseFrame1609_4* wsm, LAddress::L2Type rcvId = LAddress::L2BROADCAST(), int serial = 0);
+    bool UseAttacksServer = false;
+    bool MixLocalAttacks = true;
+    bool RandomLocalMix = false;
 
-    mbTypes::Mbs induceMisbehavior(double localAttacker, double globalAttacker);
-    void LocalMisbehaviorDetection(BasicSafetyMessage* bsm, int version);
+    double LOCAL_ATTACKER_PROB = 0.05;
 
-    void writeReport(MDReport reportBase,int version,std::string maversion,
-            BsmCheck bsmCheck, BasicSafetyMessage *bsm);
+    attackTypes::Attacks LOCAL_ATTACK_TYPE = attackTypes::RandomSpeed;
+    attackTypes::Attacks MixLocalAttacksList[19] = {attackTypes::ConstPos,
+        attackTypes::Disruptive, attackTypes::RandomPos,
+        attackTypes::StaleMessages, attackTypes::DoSRandomSybil,
+        attackTypes::ConstPosOffset, attackTypes::ConstSpeed,
+        attackTypes::DoS, attackTypes::RandomPosOffset,
+        attackTypes::DataReplaySybil, attackTypes::DoSDisruptive,
+        attackTypes::ConstSpeedOffset, attackTypes::RandomSpeedOffset,
+        attackTypes::EventualStop, attackTypes::DoSDisruptiveSybil,
+        attackTypes::DataReplay, attackTypes::DoSRandom,
+        attackTypes::GridSybil, attackTypes::RandomSpeed};
 
-    void writeListReport(MDReport reportBase,int version, std::string maversion,
-            BsmCheck bsmCheck, BasicSafetyMessage *bsm);
+    //ConstPos, ConstPosOffset, RandomPos, RandomPosOffset,
+    //ConstSpeed, ConstSpeedOffset, RandomSpeed, RandomSpeedOffset,
+    //EventualStop, Disruptive, DataReplay, StaleMessages,
+    //DoS, DoSRandom, DoSDisruptive,
+    //GridSybil, DataReplaySybil, DoSRandomSybil, DoSDisruptiveSybil,
 
-    void sendReport(MDReport reportBase,int version, std::string maversion, BsmCheck bsmCheck,
-            BasicSafetyMessage *bsm);
+    double GLOBAL_ATTACKER_PROB = 0.0;
+    attackTypes::Attacks GLOBAL_ATTACK_TYPE = attackTypes::MAStress;
+    // 1 MAStress
 
-    void writeMdBsm(std::string version, BsmCheck bsmCheck,
-            BasicSafetyMessage *bsm);
+    bool EnablePC = false;
+    pseudoChangeTypes::PseudoChange PC_TYPE = pseudoChangeTypes::Car2car;
+    // Periodical, Disposable, DistanceBased, Random, Car2car
+    //Detection Application
 
-    void writeMdListBsm(std::string version, BsmCheck bsmCheck,
-            BasicSafetyMessage *bsm);
+    bool EnableV1 = true;
+    bool EnableV2 = true;
+    bool SaveStatsV1 = true;
+    bool SaveStatsV2 = true;
 
-    void writeSelfBsm(BasicSafetyMessage bsm);
-    void writeSelfListBsm(BasicSafetyMessage bsm);
+    mdChecksVersionTypes::ChecksVersion checksVersionV1 =
+        mdChecksVersionTypes::ExperiChecks;
+    mdChecksVersionTypes::ChecksVersion checksVersionV2 =
+        mdChecksVersionTypes::ExperiChecks;
 
-    void treatAttackFlags();
-    MDAttack mdAttack;
-    MDGlobalAttack mdGlobalAttack;
+    mdAppTypes::App appTypeV1 = mdAppTypes::ThresholdApp;
+    mdAppTypes::App appTypeV2 = mdAppTypes::BehavioralApp;
 
-    pseudoChangeTypes::PseudoChange myPcType;
-    PCPolicy pcPolicy;
+    bool writeSelfMsg = false;
+    bool writeListSelfMsg = false;
 
-    typedef std::list<Obstacle*> ObstacleGridCell;
-    typedef std::vector<ObstacleGridCell> ObstacleGridRow;
-    typedef std::vector<ObstacleGridRow> Obstacles;
+    //writeBsms
+    bool writeBsmsV1 = false;
+    bool writeBsmsV2 = false;
+    bool writeListBsmsV1 = false;
+    bool writeListBsmsV2 = false;
 
-    ThresholdApp ThreV1 = ThresholdApp(1, 0.28125);
-    ThresholdApp ThreV2 = ThresholdApp(2, 0.28125);
+    //writeReport
+    bool writeReportsV1 = false;
+    bool writeReportsV2 = false;
+    bool writeListReportsV1 = false;
+    bool writeListReportsV2 = false;
 
-    AggrigationApp AggrV1 = AggrigationApp(1, 0.28125,0.5, 10.0, 3);
-    AggrigationApp AggrV2 = AggrigationApp(2, 0.28125,0.5, 10.0, 3);
+    //writeReport
+    bool writeVeReMi = false;
+    double VeReMiSliceTime = 3600;
 
-    BehavioralApp BehaV1 = BehavioralApp(1, 0.5);
-    BehavioralApp BehaV2 = BehavioralApp(2, 0.5);
+    bool sendReportsV1 = false;
+    bool sendReportsV2 = false;
+    std::string maHostV1 = "localhost";
+    std::string maHostV2 = "localhost";
+    int maPortV1 = 9980;
+    int maPortV2 = 9981;
+    //static int maPortV2 = 32790;
 
-    ExperiApp ExperV1 = ExperiApp(1, 10.0, 10, 3);
-    ExperiApp ExperV2 = ExperiApp(2, 10.0, 10, 3);
+    bool enableVarThreV1 = false;
+    bool enableVarThreV2 = false;
+    //Simulation Parameters
 
-    MachineLearningApp PybgV1 = MachineLearningApp(1, mlPortV1, mlHostV1);
-    MachineLearningApp PybgV2 = MachineLearningApp(2, mlPortV2, mlHostV2);
+    // ------ Detection Parameters -- Start
+    double MAX_PROXIMITY_RANGE_L = 30;
+    double MAX_PROXIMITY_RANGE_W = 3;
+    double MAX_PROXIMITY_DISTANCE = 2;
 
-    ProtocolEnforcer reportProtocolEnforcerV1 = ProtocolEnforcer();
-    ProtocolEnforcer reportProtocolEnforcerV2 = ProtocolEnforcer();
+    double MAX_CONFIDENCE_RANGE = 10;
+    double MAX_PLAUSIBLE_RANGE = 420;
+    double MAX_TIME_DELTA = 3.1;
+    double MAX_DELTA_INTER = 2.0;
+    double MAX_SA_RANGE = 420;
+    double MAX_SA_TIME = 2.1;
+    double MAX_KALMAN_TIME = 3.1;
+    double KALMAN_POS_RANGE = 1.0;
+    double KALMAN_SPEED_RANGE = 4.0;
+    double KALMAN_MIN_POS_RANGE = 4.0;
+    double KALMAN_MIN_SPEED_RANGE = 1.0;
+    double MIN_MAX_SPEED = 40;
+    double MIN_MAX_ACCEL = 3;
+    double MIN_MAX_DECEL = 4.5;
+    double MAX_MGT_RNG = 4;
+    double MAX_MGT_RNG_DOWN = 6.2;
+    double MAX_MGT_RNG_UP = 2.1;
+    double MAX_BEACON_FREQUENCY = 0.9;
+    double MAX_DISTANCE_FROM_ROUTE = 2;
+    double MAX_NON_ROUTE_SPEED = -1;
+    double MAX_HEADING_CHANGE = 90;
+    double DELTA_BSM_TIME = 5;
+    double DELTA_REPORT_TIME = 5;
+    double POS_HEADING_TIME = 1.1;
+    // ------ Detection Parameters -- End
 
-    double MAX_PLAUSIBLE_ACCEL = 0;
-    double MAX_PLAUSIBLE_DECEL = 0;
-    double MAX_PLAUSIBLE_SPEED = 0;
+    // ------ Storage Parameters -- Start
+    double MAX_TARGET_TIME = 2;
+    double MAX_ACCUSED_TIME = 2;
+    // ------ Storage Parameters -- End
 
-    double MaxRandomPosX = 3900.0;
-    double MaxRandomPosY = 1700.0;
+    // ------ Attacks Parameters -- Start
+    double parVar = 0.55;
+    double RandomPosOffsetX = 70.0;
+    double RandomPosOffsetY = 70.0;
+    double RandomSpeedX = 40.0;
+    double RandomSpeedY = 40.0;
+    double RandomSpeedOffsetX = 7.0;
+    double RandomSpeedOffsetY = 7.0;
+    double RandomAccelX = 2.0;
+    double RandomAccelY = 2.0;
+    double StopProb = 0.05;
+    int StaleMessages_Buffer = 60;
+    int DosMultipleFreq = 4;
+    int DosMultipleFreqSybil = 2;
+    int ReplaySeqNum = 6;
+    int SybilVehNumber = 5;
+    bool SelfSybil = false;
+    double SybilDistanceX = 5;
+    double SybilDistanceY = 2;
+    // ------ Attacks Parameters -- End
 
-    void handleReportProtocol(bool lastTimeStep);
+    // ------ Pseudonym Parameters -- Start
+    double Period_Change_Time = 240;
+    int Tolerance_Buffer = 10;
+    double Period_Change_Distance = 80;
+    double Random_Change_Chance = 0.1;
+    // ------ Pseudonym Parameters -- End
 
-    VeReMiPrintable VeReMi = VeReMiPrintable();
-
-
-    /* F2MD */
-    double lastPositionUpdate;
-    Coord curPositionConfidenceOrig;
-    Coord curSpeedConfidenceOrig;
-    Coord curHeadingConfidenceOrig;
-    Coord curAccelConfidenceOrig;
-
-    Coord curPositionConfidence;
-    Coord curSpeedConfidence;
-    Coord curHeading;
-    Coord curHeadingConfidence;
-    Coord curAccel;
-    Coord curAccelConfidence;
-    double myWidth;
-    double myLength;
-
-    std::string myVType;
-
-    mbTypes::Mbs myMdType;
-    attackTypes::Attacks myAttackType;
-    reportTypes::Report myReportType;
-    unsigned long myPseudonym;
-    int pseudoNum;
-    BasicSafetyMessage attackBsm = BasicSafetyMessage();
-    BasicSafetyMessage nextAttackBsm = BasicSafetyMessage();
-    BasicSafetyMessage myBsm[MYBSM_SIZE];
-    void addMyBsm(BasicSafetyMessage bsm);
-    int myBsmNum = 0;
-
-    Coord ConfPosMax;
-    Coord ConfSpeedMax;
-    Coord ConfHeadMax;
-    Coord ConfAccelMax;
-
-    double deltaConfPos = 0;
-    double deltaConfSpeed = 0;
-    double deltaConfHead = 0;
-    double deltaConfAccel = 0;
-
-    double deltaRPosition = 0;
-    double deltaThetaPosition = 0;
-    double deltaSpeed = 0;
-    double deltaHeading = 0;
-    double deltaAccel = 0;
-
-    bool laneChanged;
-
-    /* F2MD */
-
-public:
-
-    void setMDApp(mdAppTypes::App, mdAppTypes::App);
-
-    void addTargetNode(unsigned long id);
-    void removeTargetNode(unsigned long id);
-    void clearTargetNodes();
-    bool isTargetNode(unsigned long id);
-
-    void addAccusedNode(unsigned long id);
-    void removeAccusedNode(unsigned long id);
-    void clearAccusedNodes();
-    bool isAccusedNode(unsigned long id);
-
+    //------ Report Parameters -- Start
+    int InitialHistory = 5;
+    double CollectionPeriod = 10;
+    double UntolerancePeriod = 5;
+    //------ Report Parameters -- End
 };
 
 #endif
