@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!--debug config-->
+    <copy file="osm.net.xml"/>
+    <copy file="osm.rou.xml"/>
+    <copy file="osm.poly.xml"/>
+    <copy file="osm.view.xml"/>
+    <copy file="osm.sumocfg" type="config"/>
+</launch>

@@ -1,0 +1,363 @@
+version 2
+run General-0-20240604-01:39:00-55558
+attr configname General
+attr datetime 20240604-01:39:00
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network IRTSystemXScenario
+attr processid 55558
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.debug false
+param **.coreDebug false
+param *.playgroundSizeX 3900m
+param *.playgroundSizeY 1700m
+param *.playgroundSizeZ 50m
+param *.annotations.draw true
+param *.obstacles.obstacles "xmldoc(\"config.xml\", \"//AnalogueModel[@type='SimpleObstacleShadowing']/obstacles\")"
+param *.manager.updateInterval 0.1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown false
+param *.manager.launchConfig "xmldoc(\"IRTSystemX.launchd.xml\")"
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 420m
+param *.connectionManager.drawMaxIntfDist true
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.minPowerLevel -89dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.node[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.node[*].applType "\"JosephVeinsApp\""
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons true
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].appl.serialNumber "\"IRTSystemXScenario-ITSG5\""
+param *.node[*].appl.savePath "\"../../../f2md-results/\""
+param *.node[*].appl.UseAttacksServer false
+param *.node[*].appl.MixLocalAttacks false
+param *.node[*].appl.RandomLocalMix false
+param *.node[*].appl.LOCAL_ATTACKER_PROB 0.2
+param *.node[*].appl.LOCAL_ATTACK_TYPE 5
+param *.node[*].appl.GLOBAL_ATTACKER_PROB 0.0
+param *.node[*].appl.GLOBAL_ATTACK_TYPE 20
+param *.node[*].appl.EnablePC false
+param *.node[*].appl.PC_TYPE 5
+param *.node[*].appl.EnableV1 true
+param *.node[*].appl.EnableV2 true
+param *.node[*].appl.SaveStatsV1 true
+param *.node[*].appl.SaveStatsV2 true
+param *.node[*].appl.checksVersionV1 2
+param *.node[*].appl.checksVersionV2 2
+param *.node[*].appl.appTypeV1 0
+param *.node[*].appl.appTypeV2 2
+param *.node[*].appl.appl.REPORT_VERSION 2
+param *.node[*].appl.sendReportsV1 true
+param *.node[*].appl.sendReportsV2 false
+param *.node[*].appl.maHostV1 "\"localhost\""
+param *.node[*].appl.maHostV2 "\"localhost\""
+param *.node[*].appl.maPortV1 9980
+param *.node[*].appl.maPortV2 9981
+param *.node[*].appl.writeSelfMsg false
+param *.node[*].appl.writeListSelfMsg false
+param *.node[*].appl.writeBsmsV1 false
+param *.node[*].appl.writeBsmsV2 false
+param *.node[*].appl.writeListBsmsV1 false
+param *.node[*].appl.writeListBsmsV2 false
+param *.node[*].appl.writeReportsV1 true
+param *.node[*].appl.writeReportsV2 false
+param *.node[*].appl.writeListReportsV1 false
+param *.node[*].appl.writeListReportsV2 false
+param *.node[*].appl.writeVeReMi true
+param *.node[*].appl.VeReMiSliceTime 3600
+param *.node[*].appl.veremiConf true
+param *.node[*].appl.randomConf false
+param *.node[*].appl.variableConf false
+param *.node[*].appl.confPos 10.0
+param *.node[*].appl.confSpd 0.05
+param *.node[*].appl.confHea 20.0
+param *.node[*].appl.confAcc 0.01
+param *.node[*].appl.confPrec 100.0
+param *.node[*].appl.minConf 0.20
+param *.node[*].appl.SAVE_PERIOD 10
+param *.node[*].appl.PRINT_PERIOD 60
+param *.node[*].appl.START_SAVE 0
+param *.node[*].appl.START_ATTACK 10
+param *.node[*].appl.enableVarThreV1 false
+param *.node[*].appl.enableVarThreV2 false
+param *.node[*].appl.MAX_PROXIMITY_RANGE_L 30
+param *.node[*].appl.MAX_PROXIMITY_RANGE_W 3
+param *.node[*].appl.MAX_PROXIMITY_DISTANCE 2
+param *.node[*].appl.MAX_CONFIDENCE_RANGE 10
+param *.node[*].appl.MAX_PLAUSIBLE_RANGE 420
+param *.node[*].appl.MAX_TIME_DELTA 3.1
+param *.node[*].appl.MAX_DELTA_INTER 2.0
+param *.node[*].appl.MAX_SA_RANGE 420
+param *.node[*].appl.MAX_SA_TIME 2.1
+param *.node[*].appl.MAX_KALMAN_TIME 3.1
+param *.node[*].appl.KALMAN_POS_RANGE 1.0
+param *.node[*].appl.KALMAN_SPEED_RANGE 4.0
+param *.node[*].appl.KALMAN_MIN_POS_RANGE 4.0
+param *.node[*].appl.KALMAN_MIN_SPEED_RANGE 1.0
+param *.node[*].appl.MIN_MAX_SPEED 40
+param *.node[*].appl.MIN_MAX_ACCEL 3
+param *.node[*].appl.MIN_MAX_DECEL 4.5
+param *.node[*].appl.MAX_MGT_RNG 4
+param *.node[*].appl.MAX_MGT_RNG_DOWN 6.2
+param *.node[*].appl.MAX_MGT_RNG_UP 2.1
+param *.node[*].appl.MAX_BEACON_FREQUENCY 0.99
+param *.node[*].appl.MAX_DISTANCE_FROM_ROUTE 2
+param *.node[*].appl.MAX_NON_ROUTE_SPEED -1
+param *.node[*].appl.MAX_HEADING_CHANGE 90
+param *.node[*].appl.DELTA_BSM_TIME 5
+param *.node[*].appl.DELTA_REPORT_TIME 5
+param *.node[*].appl.POS_HEADING_TIME 1.1
+param *.node[*].appl.MAX_TARGET_TIME 2
+param *.node[*].appl.MAX_ACCUSED_TIME 2
+param *.node[*].appl.parVar 0.55
+param *.node[*].appl.RandomPosOffsetX 70.0
+param *.node[*].appl.RandomPosOffsetY 70.0
+param *.node[*].appl.RandomSpeedX 40.0
+param *.node[*].appl.RandomSpeedY 40.0
+param *.node[*].appl.RandomSpeedOffsetX 7.0
+param *.node[*].appl.RandomSpeedOffsetY 7.0
+param *.node[*].appl.RandomAccelX 2.0
+param *.node[*].appl.RandomAccelY 2.0
+param *.node[*].appl.StopProb 0.05
+param *.node[*].appl.StaleMessages_Buffer 60
+param *.node[*].appl.DosMultipleFreq 4
+param *.node[*].appl.DosMultipleFreqSybil 2
+param *.node[*].appl.ReplaySeqNum 6
+param *.node[*].appl.SybilVehNumber 5
+param *.node[*].appl.SelfSybil false
+param *.node[*].appl.SybilDistanceX 5
+param *.node[*].appl.SybilDistanceY 2
+param *.node[*].appl.Period_Change_Time 240
+param *.node[*].appl.Tolerance_Buffer 10
+param *.node[*].appl.Period_Change_Distance 80
+param *.node[*].appl.Random_Change_Chance 0.1
+param *.node[*].appl.InitialHistory 5
+param *.node[*].appl.CollectionPeriod 10
+param *.node[*].appl.UntolerancePeriod 5
+param *.node[*].veinsmobilityType.debug false
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+param *.node[*].veinsmobility.setHostSpeed true
+param *.node[*].veinsmobility.setHostAcceleration true
+
+vector 0 IRTSystemXScenario.node[0].veinsmobility posx ETV
+vector 1 IRTSystemXScenario.node[0].veinsmobility posy ETV
+vector 2 IRTSystemXScenario.node[0].veinsmobility speed ETV
+vector 3 IRTSystemXScenario.node[0].veinsmobility acceleration ETV
+vector 4 IRTSystemXScenario.node[0].veinsmobility co2emission ETV
+0	2	0.1	2189.6567832168
+0	3	0.2	2189.6567832168
+0	4	0.3	2189.6819742212
+0	5	0.4	2189.7307746563
+0	6	0.5	2189.804455633
+0	7	0.6	2189.9000968806
+0	8	0.7	2190.0193551239
+0	18	0.8	2190.1596150327
+0	19	0.9	2190.319930448
+0	20	1	2190.4989336729
+0	21	1.1	2190.6977131399
+0	22	1.2	2190.9136726777
+0	23	1.3	2191.1503983536
+0	24	1.4	2191.4059171272
+0	25	1.5	2191.6821597464
+0	26	1.6	2191.97207231
+0	27	1.7	2192.287425316
+0	37	1.8	2192.6193465284
+0	38	1.9	2192.9746648838
+0	39	2	2193.3441172904
+0	40	2.1	2193.7375675152
+0	41	2.2	2194.1455582565
+0	42	2.3	2194.5702704118
+0	43	2.4	2195.0182148635
+0	44	2.5	2195.4805528201
+0	45	2.6	2195.9617037795
+0	46	2.7	2196.4641159057
+0	56	2.8	2196.9796377983
+0	57	2.9	2197.5080440001
+0	58	3	2198.0620259595
+0	59	3.1	2198.6415836765
+0	60	3.2	2199.246717151
+0	61	3.3	2199.8774263832
+0	62	3.4	2200.5255960928
+0	63	3.5	2201.1295000682
+0	64	3.6	2201.7593606774
+0	65	3.7	2202.4154601687
+0	75	3.8	2203.0971761791
+0	76	3.9	2203.8045087087
+0	77	4	2204.5374577574
+1	2	0.1	750.53944055944
+1	3	0.2	750.53944055944
+1	4	0.3	750.54400717517
+1	5	0.4	750.55285369954
+1	6	0.5	750.56621055907
+1	7	0.6	750.58354836816
+1	8	0.7	750.60516745729
+1	18	0.8	750.63059372039
+1	19	0.9	750.65965563808
+1	20	1	750.69210527483
+1	21	1.1	750.72813994124
+1	22	1.2	750.76728900436
+1	23	1.3	750.81020254515
+1	24	1.4	750.85652289153
+1	25	1.5	750.90660004881
+1	26	1.6	750.95915528843
+1	27	1.7	751.01632236178
+1	37	1.8	751.07649291332
+1	38	1.9	751.14090489007
+1	39	2	751.20787908227
+1	40	2.1	751.27920358984
+1	41	2.2	751.35316399674
+1	42	2.3	751.43015565522
+1	43	2.4	751.51135885559
+1	44	2.5	751.59517130507
+1	45	2.6	751.68239416855
+1	46	2.7	751.77347124831
+1	56	2.8	751.86692486153
+1	57	2.9	751.96271413746
+1	58	3	752.06313977702
+1	59	3.1	752.16820178022
+1	60	3.2	752.27790014705
+1	61	3.3	752.39223487752
+1	62	3.4	752.50973483673
+1	63	3.5	752.61921032042
+1	64	3.6	752.73299892409
+1	65	3.7	752.85086110814
+1	75	3.8	752.97332506211
+1	76	3.9	753.10039078599
+1	77	4	753.23205827978
+2	3	0.2	0.25608864674508
+2	4	0.3	0.49609920958294
+2	5	0.4	0.74903173053678
+2	6	0.5	0.97227713724668
+2	7	0.6	1.2123646061223
+2	8	0.7	1.4258649502315
+2	18	0.8	1.6297467572309
+2	19	0.9	1.819724727207
+2	20	1	2.0207675676562
+2	21	1.1	2.1954180493698
+2	22	1.2	2.4065240518807
+2	23	1.3	2.597572365905
+2	24	1.4	2.8082484274859
+2	25	1.5	2.9472153986164
+2	26	1.6	3.2058397993923
+2	27	1.7	3.3742701455031
+2	37	1.8	3.612122617605
+2	38	1.9	3.7558076408075
+2	39	2	3.9997665032128
+2	40	2.1	4.1475836024608
+2	41	2.2	4.317571436615
+2	42	2.3	4.5537480990694
+2	43	2.4	4.7000706961623
+2	44	2.5	4.8913213640673
+2	45	2.6	5.107459766561
+2	46	2.7	5.2407320358546
+2	56	2.8	5.37171233612
+2	57	2.9	5.63171233612
+2	58	3	5.89171233612
+2	59	3.1	6.15171233612
+2	60	3.2	6.41171233612
+2	61	3.3	6.5892133990848
+2	62	3.4	6.1392133990848
+2	63	3.5	6.3992133990848
+2	64	3.6	6.6592133990848
+2	65	3.7	6.9192133990848
+2	75	3.8	7.1792133990848
+2	76	3.9	7.4392133990848
+2	77	4	7.6871619106303
+3	4	0.3	2.4001056283786
+3	5	0.4	2.5293252095384
+3	6	0.5	2.232454067099
+3	7	0.6	2.4008746887567
+3	8	0.7	2.1350034410913
+3	18	0.8	2.0388180699937
+3	19	0.9	1.8997796997611
+3	20	1	2.0104284044926
+3	21	1.1	1.7465048171359
+3	22	1.2	2.1110600251093
+3	23	1.3	1.9104831402423
+3	24	1.4	2.1067606158089
+3	25	1.5	1.3896697113058
+3	26	1.6	2.5862440077588
+3	27	1.7	1.6843034611084
+3	37	1.8	2.378524721018
+3	38	1.9	1.4368502320256
+3	39	2	2.4395886240527
+3	40	2.1	1.4781709924806
+3	41	2.2	1.6998783415416
+3	42	2.3	2.3617666245438
+3	43	2.4	1.4632259709295
+3	44	2.5	1.9125066790497
+3	45	2.6	2.1613840249367
+3	46	2.7	1.3327226929367
+3	56	2.8	1.3098030026536
+3	57	2.9	2.6
+3	58	3	2.6
+3	59	3.1	2.6
+3	60	3.2	2.6
+3	61	3.3	1.7750106296477
+3	62	3.4	-4.5
+3	63	3.5	2.6
+3	64	3.6	2.6
+3	65	3.7	2.6
+3	75	3.8	2.6
+3	76	3.9	2.6
+3	77	4	2.4794851154555
+4	4	0.3	1.4208995168125
+4	5	0.4	1.6027574184216
+4	6	0.5	1.6800934918907
+4	7	0.6	1.8701363393776
+4	8	0.7	1.9127101281761
+4	18	0.8	1.989803336982
+4	19	0.9	2.0314955196537
+4	20	1	2.1873327727717
+4	21	1.1	2.1409527597706
+4	22	1.2	2.4517345394443
+4	23	1.3	2.4329169870952
+4	24	1.4	2.6733458118746
+4	25	1.5	2.241591635854
+4	26	1.6	3.2658446229843
+4	27	1.7	2.6459979100579
+4	37	1.8	3.3591595404351
+4	38	1.9	2.596638844212
+4	39	2	3.6604861004125
+4	40	2.1	2.7942024391792
+4	41	2.2	3.0944972504351
+4	42	2.3	3.9303246428122
+4	43	2.4	3.0037438830328
+4	44	2.5	3.611247011128
+4	45	2.6	4.0291347103913
+4	46	2.7	3.0593604021976
+4	56	2.8	3.0790986175432
+4	57	2.9	4.9270051380845
+4	58	3	5.1048559950167
+4	59	3.1	5.2829276077744
+4	60	3.2	5.4612297182649
+4	61	3.3	4.2730098506131
+4	62	3.4	0.973
+4	63	3.5	5.452652811341
+4	64	3.6	5.6311833895671
+4	65	3.7	5.8099634810191
+4	75	3.8	5.9890028276043
+4	76	3.9	6.1683111712298
+4	77	4	6.1163011536609
+

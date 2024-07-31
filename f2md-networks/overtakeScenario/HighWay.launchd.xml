@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!--debug config-->
+    <copy file="HighWay.net.xml"/>
+    <copy file="HighWay.passenger.overtake.xml"/>
+    <copy file="HighWay.view.xml"/>
+    <copy file="HighWay.sumocfg" type="config"/>
+</launch>

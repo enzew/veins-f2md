@@ -1,0 +1,507 @@
+file 1161371 1722342790                                         
+version 2
+run General-0-20240730-05:30:34-18659
+attr configname General
+attr datetime 20240730-05:30:34
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network HighWayScenario
+attr processid 18659
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.debug false
+param **.coreDebug false
+param *.playgroundSizeX 800m
+param *.playgroundSizeY 800m
+param *.playgroundSizeZ 50m
+param *.annotations.draw true
+param *.manager.updateInterval 0.1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown false
+param *.manager.launchConfig "xmldoc(\"HighWay.launchd.xml\")"
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 420m
+param *.connectionManager.drawMaxIntfDist true
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.minPowerLevel -89dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.node[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.node[*].applType "\"JosephVeinsApp\""
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons true
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].appl.serialNumber "\"HighWayScenario-ITSG5\""
+param *.node[*].appl.savePath "\"../../../f2md-results/\""
+param *.node[*].appl.UseAttacksServer false
+param *.node[*].appl.MixLocalAttacks false
+param *.node[*].appl.RandomLocalMix false
+param *.node[*].appl.LOCAL_ATTACKER_PROB 0.3
+param *.node[*].appl.LOCAL_ATTACK_TYPE 21
+param *.node[*].appl.GLOBAL_ATTACKER_PROB 0.0
+param *.node[*].appl.GLOBAL_ATTACK_TYPE 20
+param *.node[*].appl.EnablePC false
+param *.node[*].appl.PC_TYPE 5
+param *.node[*].appl.EnableV1 true
+param *.node[*].appl.EnableV2 true
+param *.node[*].appl.SaveStatsV1 true
+param *.node[*].appl.SaveStatsV2 true
+param *.node[*].appl.checksVersionV1 2
+param *.node[*].appl.checksVersionV2 2
+param *.node[*].appl.appTypeV1 3
+param *.node[*].appl.appTypeV2 2
+param *.node[*].appl.appl.REPORT_VERSION 2
+param *.node[*].appl.sendReportsV1 false
+param *.node[*].appl.sendReportsV2 false
+param *.node[*].appl.maHostV1 "\"localhost\""
+param *.node[*].appl.maHostV2 "\"localhost\""
+param *.node[*].appl.maPortV1 9980
+param *.node[*].appl.maPortV2 9981
+param *.node[*].appl.writeSelfMsg false
+param *.node[*].appl.writeListSelfMsg false
+param *.node[*].appl.writeBsmsV1 false
+param *.node[*].appl.writeBsmsV2 false
+param *.node[*].appl.writeListBsmsV1 false
+param *.node[*].appl.writeListBsmsV2 false
+param *.node[*].appl.writeReportsV1 false
+param *.node[*].appl.writeReportsV2 false
+param *.node[*].appl.writeListReportsV1 false
+param *.node[*].appl.writeListReportsV2 false
+param *.node[*].appl.writeVeReMi false
+param *.node[*].appl.VeReMiSliceTime 3600
+param *.node[*].appl.enableMTA true
+param *.node[*].appl.selectAttacker false
+param *.node[*].appl.veremiConf true
+param *.node[*].appl.randomConf false
+param *.node[*].appl.variableConf false
+param *.node[*].appl.confPos 10.0
+param *.node[*].appl.confSpd 0.05
+param *.node[*].appl.confHea 20.0
+param *.node[*].appl.confAcc 0.01
+param *.node[*].appl.confPrec 100.0
+param *.node[*].appl.minConf 0.20
+param *.node[*].appl.SAVE_PERIOD 10
+param *.node[*].appl.PRINT_PERIOD 60
+param *.node[*].appl.START_SAVE 0
+param *.node[*].appl.START_ATTACK 10
+param *.node[*].appl.enableVarThreV1 false
+param *.node[*].appl.enableVarThreV2 false
+param *.node[*].appl.MAX_PROXIMITY_RANGE_L 30
+param *.node[*].appl.MAX_PROXIMITY_RANGE_W 3
+param *.node[*].appl.MAX_PROXIMITY_DISTANCE 2
+param *.node[*].appl.MAX_CONFIDENCE_RANGE 10
+param *.node[*].appl.MAX_PLAUSIBLE_RANGE 420
+param *.node[*].appl.MAX_TIME_DELTA 3.1
+param *.node[*].appl.MAX_DELTA_INTER 2.0
+param *.node[*].appl.MAX_SA_RANGE 420
+param *.node[*].appl.MAX_SA_TIME 2.1
+param *.node[*].appl.MAX_KALMAN_TIME 3.1
+param *.node[*].appl.KALMAN_POS_RANGE 1.0
+param *.node[*].appl.KALMAN_SPEED_RANGE 4.0
+param *.node[*].appl.KALMAN_MIN_POS_RANGE 4.0
+param *.node[*].appl.KALMAN_MIN_SPEED_RANGE 1.0
+param *.node[*].appl.MIN_MAX_SPEED 40
+param *.node[*].appl.MIN_MAX_ACCEL 3
+param *.node[*].appl.MIN_MAX_DECEL 4.5
+param *.node[*].appl.MAX_MGT_RNG 4
+param *.node[*].appl.MAX_MGT_RNG_DOWN 6.2
+param *.node[*].appl.MAX_MGT_RNG_UP 2.1
+param *.node[*].appl.MAX_BEACON_FREQUENCY 0.99
+param *.node[*].appl.MAX_DISTANCE_FROM_ROUTE 2
+param *.node[*].appl.MAX_NON_ROUTE_SPEED -1
+param *.node[*].appl.MAX_HEADING_CHANGE 90
+param *.node[*].appl.DELTA_BSM_TIME 5
+param *.node[*].appl.DELTA_REPORT_TIME 5
+param *.node[*].appl.POS_HEADING_TIME 1.1
+param *.node[*].appl.MAX_TARGET_TIME 2
+param *.node[*].appl.MAX_ACCUSED_TIME 2
+param *.node[*].appl.parVar 0.55
+param *.node[*].appl.RandomPosOffsetX 70.0
+param *.node[*].appl.RandomPosOffsetY 70.0
+param *.node[*].appl.RandomSpeedX 40.0
+param *.node[*].appl.RandomSpeedY 40.0
+param *.node[*].appl.RandomSpeedOffsetX 7.0
+param *.node[*].appl.RandomSpeedOffsetY 7.0
+param *.node[*].appl.RandomAccelX 2.0
+param *.node[*].appl.RandomAccelY 2.0
+param *.node[*].appl.StopProb 0.05
+param *.node[*].appl.StaleMessages_Buffer 60
+param *.node[*].appl.DosMultipleFreq 4
+param *.node[*].appl.DosMultipleFreqSybil 2
+param *.node[*].appl.ReplaySeqNum 6
+param *.node[*].appl.SybilVehNumber 5
+param *.node[*].appl.SelfSybil false
+param *.node[*].appl.SybilDistanceX 5
+param *.node[*].appl.SybilDistanceY 2
+param *.node[*].appl.Period_Change_Time 240
+param *.node[*].appl.Tolerance_Buffer 10
+param *.node[*].appl.Period_Change_Distance 80
+param *.node[*].appl.Random_Change_Chance 0.1
+param *.node[*].appl.InitialHistory 5
+param *.node[*].appl.CollectionPeriod 10
+param *.node[*].appl.UntolerancePeriod 5
+param *.node[*].veinsmobilityType.debug false
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+param *.node[*].veinsmobility.setHostSpeed true
+param *.node[*].veinsmobility.setHostAcceleration true
+
+vector 0 HighWayScenario.node[0].veinsmobility posx ETV
+vector 1 HighWayScenario.node[0].veinsmobility posy ETV
+vector 2 HighWayScenario.node[0].veinsmobility laneid ETV
+vector 3 HighWayScenario.node[1].veinsmobility posx ETV
+vector 4 HighWayScenario.node[1].veinsmobility posy ETV
+vector 5 HighWayScenario.node[1].veinsmobility laneid ETV
+vector 6 HighWayScenario.node[2].veinsmobility posx ETV
+vector 7 HighWayScenario.node[2].veinsmobility posy ETV
+vector 8 HighWayScenario.node[2].veinsmobility laneid ETV
+vector 9 HighWayScenario.node[0].veinsmobility speed ETV
+vector 10 HighWayScenario.node[1].veinsmobility speed ETV
+vector 11 HighWayScenario.node[2].veinsmobility speed ETV
+vector 12 HighWayScenario.node[0].veinsmobility acceleration ETV
+vector 13 HighWayScenario.node[0].veinsmobility co2emission ETV
+vector 14 HighWayScenario.node[1].veinsmobility acceleration ETV
+vector 15 HighWayScenario.node[1].veinsmobility co2emission ETV
+vector 16 HighWayScenario.node[2].veinsmobility acceleration ETV
+vector 17 HighWayScenario.node[2].veinsmobility co2emission ETV
+vector 18 HighWayScenario.node[3].veinsmobility posx ETV
+vector 19 HighWayScenario.node[3].veinsmobility posy ETV
+vector 20 HighWayScenario.node[3].veinsmobility laneid ETV
+vector 21 HighWayScenario.node[4].veinsmobility posx ETV
+vector 22 HighWayScenario.node[4].veinsmobility posy ETV
+vector 23 HighWayScenario.node[4].veinsmobility laneid ETV
+vector 24 HighWayScenario.node[5].veinsmobility posx ETV
+vector 25 HighWayScenario.node[5].veinsmobility posy ETV
+vector 26 HighWayScenario.node[5].veinsmobility laneid ETV
+vector 27 HighWayScenario.node[3].veinsmobility speed ETV
+vector 28 HighWayScenario.node[4].veinsmobility speed ETV
+vector 29 HighWayScenario.node[5].veinsmobility speed ETV
+vector 30 HighWayScenario.node[3].veinsmobility acceleration ETV
+vector 31 HighWayScenario.node[3].veinsmobility co2emission ETV
+vector 32 HighWayScenario.node[4].veinsmobility acceleration ETV
+vector 33 HighWayScenario.node[4].veinsmobility co2emission ETV
+vector 34 HighWayScenario.node[5].veinsmobility acceleration ETV
+vector 35 HighWayScenario.node[5].veinsmobility co2emission ETV
+vector 36 HighWayScenario.node[6].veinsmobility posx ETV
+vector 37 HighWayScenario.node[6].veinsmobility posy ETV
+vector 38 HighWayScenario.node[6].veinsmobility laneid ETV
+vector 39 HighWayScenario.node[7].veinsmobility posx ETV
+vector 40 HighWayScenario.node[7].veinsmobility posy ETV
+vector 41 HighWayScenario.node[7].veinsmobility laneid ETV
+vector 42 HighWayScenario.node[8].veinsmobility posx ETV
+vector 43 HighWayScenario.node[8].veinsmobility posy ETV
+vector 44 HighWayScenario.node[8].veinsmobility laneid ETV
+vector 45 HighWayScenario.node[6].veinsmobility speed ETV
+vector 46 HighWayScenario.node[7].veinsmobility speed ETV
+vector 47 HighWayScenario.node[8].veinsmobility speed ETV
+vector 48 HighWayScenario.node[6].veinsmobility acceleration ETV
+vector 49 HighWayScenario.node[6].veinsmobility co2emission ETV
+vector 50 HighWayScenario.node[7].veinsmobility acceleration ETV
+vector 51 HighWayScenario.node[7].veinsmobility co2emission ETV
+vector 52 HighWayScenario.node[8].veinsmobility acceleration ETV
+vector 53 HighWayScenario.node[8].veinsmobility co2emission ETV
+8	9604 3444 2 5663 0.1 26.7 267 0 2 383 629
+17	13048 7014 4 5663 0.3 26.7 265 0.68266341449612 13.79984606032 1192.3951496232 7999.156991726
+16	20062 7644 4 5663 0.3 26.7 265 -1.179155851854 2.5900239454906 197.60685015329 459.69863451925
+11	27706 7394 3 5663 0.2 26.7 266 0.25433206626587 20.02118042568 4361.0462921551 80548.677947507
+7	35100 7145 2 5663 0.1 26.7 267 24.640452687941 48.017896047374 9903.1097649342 385591.01969238
+6	42245 7160 2 5663 0.1 26.7 267 27.138509720407 460.45902203295 74838.570004248 26039856.456805
+2	49405 3498 2 5911 0.1 27.1 271 0 2 328 622
+13	52903 7171 4 5911 0.3 27.1 269 0.34575284240427 16.431296002128 1325.3627398341 9600.0555320245
+12	60074 7710 4 5911 0.3 27.1 269 -4.4457725414204 2.5830774605973 214.2883047078 567.87097067474
+9	67784 7235 3 5911 0.2 27.1 270 0.25286542447004 21.69969131227 4361.6457807513 82777.000168098
+1	75019 7254 2 5911 0.1 27.1 271 28.218694164685 45.004608484844 10042.88765884 379707.23566982
+0	82273 7256 2 5911 0.1 27.1 271 27.809864994341 459.56143453489 79082.638386834 28105827.915657
+5	89529 3650 2 6213 0.1 28.2 282 0 1 103 103
+15	93179 7386 4 6213 0.3 28.2 280 0.61268457876184 14.257157219496 1588.3514175098 13000.521990987
+14	100565 7785 4 6213 0.3 28.2 280 -4.5 2.5999315908102 200.90377119383 1069.1490759078
+10	108350 7826 3 6213 0.2 28.2 281 0.25457871402032 20.380509102182 4357.6933830717 75436.446172481
+4	116176 7562 2 6213 0.1 28.2 282 21.816278965939 44.659736790574 9464.9051582852 335439.12878378
+3	123738 7565 2 6213 0.1 28.2 282 27.388582515095 460.01022847404 77850.400239898 26820667.666543
+vector 54 HighWayScenario.node[9].veinsmobility posx ETV
+vector 55 HighWayScenario.node[9].veinsmobility posy ETV
+vector 56 HighWayScenario.node[9].veinsmobility laneid ETV
+vector 57 HighWayScenario.node[10].veinsmobility posx ETV
+vector 58 HighWayScenario.node[10].veinsmobility posy ETV
+vector 59 HighWayScenario.node[10].veinsmobility laneid ETV
+vector 60 HighWayScenario.node[11].veinsmobility posx ETV
+vector 61 HighWayScenario.node[11].veinsmobility posy ETV
+vector 62 HighWayScenario.node[11].veinsmobility laneid ETV
+vector 63 HighWayScenario.node[9].veinsmobility speed ETV
+vector 64 HighWayScenario.node[10].veinsmobility speed ETV
+vector 65 HighWayScenario.node[11].veinsmobility speed ETV
+vector 66 HighWayScenario.node[9].veinsmobility acceleration ETV
+vector 67 HighWayScenario.node[9].veinsmobility co2emission ETV
+vector 68 HighWayScenario.node[10].veinsmobility acceleration ETV
+vector 69 HighWayScenario.node[10].veinsmobility co2emission ETV
+vector 70 HighWayScenario.node[11].veinsmobility acceleration ETV
+vector 71 HighWayScenario.node[11].veinsmobility co2emission ETV
+23	132395 4434 807 11528 11.2 40.9 298 0 1 149 149
+33	136829 8073 810 11528 11.4 40.9 296 0.87004506982649 12.500211802183 1062.2239526827 5704.9107301058
+32	144902 8864 810 11528 11.4 40.9 296 -1.2208677851362 2.5962685778039 168.61224555329 399.53203555958
+28	153766 8550 808 11528 11.3 40.9 297 0.25359022528469 17.167560702355 4360.174240907 70430.74710632
+22	162316 8577 807 11528 11.2 40.9 298 21.821601844527 44.818686844809 10103.455024387 362651.78950424
+21	170893 8568 807 11528 11.2 40.9 298 26.820930823695 460.01022847404 81391.468888131 27806288.938624
+20	179461 4512 807 11656 11.2 41.4 303 0 2 352 634
+31	183973 8007 810 11656 11.4 41.4 301 0.64448210650585 14.649946177704 1429.7624551052 10245.356163932
+30	191980 8817 810 11656 11.4 41.4 301 -4.5 2.5994773699902 194.72984158292 824.01604632508
+27	200797 8705 808 11656 11.3 41.4 302 0.2557743860418 19.737158640563 4356.6927085718 71990.184313197
+19	209502 8717 807 11656 11.2 41.4 303 28.203342341274 44.718403861668 11210.195655149 422475.77487989
+18	218219 8715 807 11656 11.2 41.4 303 28.108220337744 459.56143453489 87651.338145897 30725956.393249
+26	226934 4622 807 11920 11.2 42.1 310 1 2 475 805
+35	231556 7849 810 11920 11.4 42.1 308 0.973 15.540066049547 1790.5271098753 16095.502900847
+34	239405 8983 810 11920 11.4 42.1 308 -1.9444444444444 2.5998393405695 197.73500349759 1189.7891492037
+29	248388 8905 808 11920 11.3 42.1 309 0.2567866959197 20.645165502832 4360.7900055924 67815.751845788
+25	257293 8927 807 11920 11.2 42.1 310 24.528887128985 48.010986075779 11550.298319332 452601.33942794
+24	266220 8921 807 11920 11.2 42.1 310 27.249511963794 460.45902203295 85211.110979758 29087147.349787
+vector 72 HighWayScenario.node[12].veinsmobility posx ETV
+vector 73 HighWayScenario.node[12].veinsmobility posy ETV
+vector 74 HighWayScenario.node[12].veinsmobility laneid ETV
+vector 75 HighWayScenario.node[13].veinsmobility posx ETV
+vector 76 HighWayScenario.node[13].veinsmobility posy ETV
+vector 77 HighWayScenario.node[13].veinsmobility laneid ETV
+vector 78 HighWayScenario.node[14].veinsmobility posx ETV
+vector 79 HighWayScenario.node[14].veinsmobility posy ETV
+vector 80 HighWayScenario.node[14].veinsmobility laneid ETV
+vector 81 HighWayScenario.node[12].veinsmobility speed ETV
+vector 82 HighWayScenario.node[13].veinsmobility speed ETV
+vector 83 HighWayScenario.node[14].veinsmobility speed ETV
+vector 84 HighWayScenario.node[12].veinsmobility acceleration ETV
+vector 85 HighWayScenario.node[12].veinsmobility co2emission ETV
+vector 86 HighWayScenario.node[13].veinsmobility acceleration ETV
+vector 87 HighWayScenario.node[13].veinsmobility co2emission ETV
+vector 88 HighWayScenario.node[14].veinsmobility acceleration ETV
+vector 89 HighWayScenario.node[14].veinsmobility co2emission ETV
+44	276239 4015 3496 14644 22.3 48.6 264 0 2 296 542
+53	280254 7308 3612 14644 22.5 48.6 262 0.53329892156481 14.546098581237 1222.3540409026 8545.1494638429
+52	287562 7887 3612 14644 22.5 48.6 262 -1.9444444444444 2.5939374230569 201.99524339962 478.27332476851
+47	295449 7663 3575 14644 22.4 48.6 263 0.25730835215095 20.490995047278 4353.0188250203 81745.192616247
+43	303112 7671 3496 14644 22.3 48.6 264 21.816171313584 48.016377606175 9569.4667198025 370370.87249494
+42	310783 7684 3496 14644 22.3 48.6 264 27.864336043634 460.45902203295 74574.082020167 26070409.904525
+38	318467 4599 3496 16111 22.3 52.3 301 0 2 382 722
+49	323066 8223 3612 16111 22.5 52.3 299 0.84442713649001 13.316622529222 1178.5754394528 6748.5052497857
+48	331289 9019 3612 16111 22.5 52.3 299 -4.1279545828005 2.5986827361398 180.16164841454 531.79231371236
+45	340308 8757 3575 16111 22.4 52.3 300 0.24871436121245 18.378439231297 4345.9082007349 70981.613948981
+37	349065 8784 3496 16111 22.3 52.3 301 28.21452331467 44.877349433065 11133.05154712 420480.41215575
+36	357849 8782 3496 16111 22.3 52.3 301 29.035131784824 459.56143453489 85482.491234763 29773203.141669
+41	366631 5073 3496 17132 22.3 55.3 331 0 1 103 103
+51	371704 8850 3612 17132 22.5 55.3 329 0.973 9.7801528158977 1034.7629964689 4777.3417572974
+50	380554 9969 3612 17132 22.5 55.3 329 -4.5 2.59393769335 144.86550282392 431.75692028759
+46	390523 9648 3575 17132 22.4 55.3 330 0.25876099844882 14.859630776132 4363.0168087669 61869.454403968
+40	400171 9672 3496 17132 22.3 55.3 331 21.811812868779 44.655620674107 10946.602798655 382323.1878874
+39	409843 9680 3496 17132 22.3 55.3 331 26.302870641754 460.01022847404 87954.491417756 29420744.723599
+vector 90 HighWayScenario.node[15].veinsmobility posx ETV
+vector 91 HighWayScenario.node[15].veinsmobility posy ETV
+vector 92 HighWayScenario.node[15].veinsmobility laneid ETV
+vector 93 HighWayScenario.node[16].veinsmobility posx ETV
+vector 94 HighWayScenario.node[16].veinsmobility posy ETV
+vector 95 HighWayScenario.node[16].veinsmobility laneid ETV
+vector 96 HighWayScenario.node[17].veinsmobility posx ETV
+vector 97 HighWayScenario.node[17].veinsmobility posy ETV
+vector 98 HighWayScenario.node[17].veinsmobility laneid ETV
+vector 99 HighWayScenario.node[15].veinsmobility speed ETV
+vector 100 HighWayScenario.node[16].veinsmobility speed ETV
+vector 101 HighWayScenario.node[17].veinsmobility speed ETV
+vector 102 HighWayScenario.node[15].veinsmobility acceleration ETV
+vector 103 HighWayScenario.node[15].veinsmobility co2emission ETV
+vector 104 HighWayScenario.node[16].veinsmobility acceleration ETV
+vector 105 HighWayScenario.node[16].veinsmobility co2emission ETV
+vector 106 HighWayScenario.node[17].veinsmobility acceleration ETV
+vector 107 HighWayScenario.node[17].veinsmobility co2emission ETV
+59	420629 3936 7492 18666 33.4 58.5 252 1 1 252 252
+69	424565 7095 7633 18666 33.6 58.5 250 0.42450253008987 15.657538200493 1288.9889344068 9785.9513353917
+68	431660 7610 7633 18666 33.6 58.5 250 -1.1821446635993 2.5960766500328 215.68548463367 497.744103343
+64	439270 7411 7517 18666 33.5 58.5 251 0.25542242295085 21.878516270819 4343.5165561075 86224.22746413
+58	446681 7428 7492 18666 33.4 58.5 252 25.016805458294 44.81137496357 9065.6527236811 337601.85769544
+57	454109 7442 7492 18666 33.4 58.5 252 29.285815257812 460.01022847404 72011.529762033 25317110.778004
+56	461551 4158 7492 19356 33.4 59.9 266 0 2 317 591
+67	465709 7533 7633 19356 33.6 59.9 264 0.14656450089688 17.952558988654 1485.1912359702 12625.724340107
+66	473242 7986 7633 19356 33.6 59.9 264 -3.0884536172892 2.5873036384117 243.7664015273 625.89124723664
+63	481228 7833 7517 19356 33.5 59.9 265 0.24729256324144 24.640176541908 4345.8707685963 86185.042146984
+55	489061 7843 7492 19356 33.4 59.9 266 28.216463494206 44.816542397497 9956.6571019158 379820.30958231
+54	496904 7850 7492 19356 33.4 59.9 266 29.671245087147 459.56143453489 79959.623444412 28673381.362638
+62	504754 4488 7492 19961 33.4 62 287 0 2 313 551
+71	509242 8008 7633 19961 33.6 62 285 0.74576064038759 13.353998865134 1174.0423049804 7326.7798629228
+70	517250 8719 7633 19961 33.6 62 285 -1.9444444444444 2.5661933330777 180.52106359269 500.79534761448
+65	525969 8452 7517 19961 33.5 62 286 0.24774853203376 18.372831839426 4358.4466997321 73705.655714095
+61	534421 8477 7492 19961 33.4 62 287 21.820329192591 48.014127850923 10338.255748144 397394.62929625
+60	542898 8473 7492 19961 33.4 62 287 27.110430388565 460.45902203295 79625.480209433 27468673.773197
+vector 108 HighWayScenario.node[18].veinsmobility posx ETV
+vector 109 HighWayScenario.node[18].veinsmobility posy ETV
+vector 110 HighWayScenario.node[18].veinsmobility laneid ETV
+vector 111 HighWayScenario.node[19].veinsmobility posx ETV
+vector 112 HighWayScenario.node[19].veinsmobility posy ETV
+vector 113 HighWayScenario.node[19].veinsmobility laneid ETV
+vector 114 HighWayScenario.node[20].veinsmobility posx ETV
+vector 115 HighWayScenario.node[20].veinsmobility posy ETV
+vector 116 HighWayScenario.node[20].veinsmobility laneid ETV
+vector 117 HighWayScenario.node[18].veinsmobility speed ETV
+vector 118 HighWayScenario.node[19].veinsmobility speed ETV
+vector 119 HighWayScenario.node[20].veinsmobility speed ETV
+vector 120 HighWayScenario.node[18].veinsmobility acceleration ETV
+vector 121 HighWayScenario.node[18].veinsmobility co2emission ETV
+vector 122 HighWayScenario.node[19].veinsmobility acceleration ETV
+vector 123 HighWayScenario.node[19].veinsmobility co2emission ETV
+vector 124 HighWayScenario.node[20].veinsmobility acceleration ETV
+vector 125 HighWayScenario.node[20].veinsmobility co2emission ETV
+74	552487 4518 12491 24433 44.5 73 286 0 2 328 580
+85	557005 7973 12664 24433 44.7 73 284 0.79499224608101 12.780332552444 1120.6736403344 6537.7086789727
+84	564978 8752 12664 24433 44.7 73 284 -1.1893870814005 2.5889349353267 178.51056636509 425.75899200421
+81	573730 8465 12606 24433 44.6 73 285 0.25138744058274 18.115723557742 4346.4608926122 73394.515217363
+73	582195 8489 12491 24433 44.5 73 286 28.206693354477 43.901730618532 10322.316811556 379178.75097224
+72	590684 8499 12491 24433 44.5 73 286 28.964014326875 459.56143453489 79007.26301771 27123629.058335
+80	599183 4598 12491 24536 44.5 73.5 291 0 2 388 706
+89	603781 8042 12664 24536 44.7 73.5 289 0.68173416429948 14.743905390625 1384.2713748762 9809.7344355534
+88	611823 8751 12664 24536 44.7 73.5 289 -4.5 2.5966895040591 198.94894559797 701.15919244106
+83	620574 8611 12606 24536 44.6 73.5 290 0.24947086230991 20.170851741639 4357.6695140888 73349.013452158
+79	629185 8642 12491 24536 44.5 73.5 291 21.825005232876 48.009907833246 10866.302235245 429160.63706522
+78	637827 8642 12491 24536 44.5 73.5 291 27.371017073445 460.45902203295 82523.201990241 28574125.134455
+77	646469 4834 12491 25091 44.5 75 306 1 2 527 969
+87	651303 8523 12664 25091 44.7 75 304 0.66610344379675 13.169577127878 1232.3852349631 7327.153241529
+86	659826 9258 12664 25091 44.7 75 304 -4.5 2.5975996300391 188.43888425974 604.06318047121
+82	669084 9060 12606 25091 44.6 75 305 0.25352621700452 19.174718307626 4355.0764231849 71425.690773681
+76	678144 9090 12491 25091 44.5 75 306 28.200205538047 48.010018691453 11851.413935293 471142.32336907
+75	687234 9079 12491 25091 44.5 75 306 28.206170120648 460.01022847404 88431.134208054 31092695.479774
+vector 126 HighWayScenario.node[21].veinsmobility posx ETV
+vector 127 HighWayScenario.node[21].veinsmobility posy ETV
+vector 128 HighWayScenario.node[21].veinsmobility laneid ETV
+vector 129 HighWayScenario.node[22].veinsmobility posx ETV
+vector 130 HighWayScenario.node[22].veinsmobility posy ETV
+vector 131 HighWayScenario.node[22].veinsmobility laneid ETV
+vector 132 HighWayScenario.node[23].veinsmobility posx ETV
+vector 133 HighWayScenario.node[23].veinsmobility posy ETV
+vector 134 HighWayScenario.node[23].veinsmobility laneid ETV
+vector 135 HighWayScenario.node[21].veinsmobility speed ETV
+vector 136 HighWayScenario.node[22].veinsmobility speed ETV
+vector 137 HighWayScenario.node[23].veinsmobility speed ETV
+vector 138 HighWayScenario.node[21].veinsmobility acceleration ETV
+vector 139 HighWayScenario.node[21].veinsmobility co2emission ETV
+vector 140 HighWayScenario.node[22].veinsmobility acceleration ETV
+vector 141 HighWayScenario.node[22].veinsmobility co2emission ETV
+vector 142 HighWayScenario.node[23].veinsmobility acceleration ETV
+vector 143 HighWayScenario.node[23].veinsmobility co2emission ETV
+95	697429 4140 17213 27653 55.6 81.7 262 1 1 262 262
+105	701569 7663 17386 27653 55.8 81.7 260 0.52445712019926 14.717293780555 1221.1831547208 8434.08676157
+104	709232 8240 17386 27653 55.8 81.7 260 -1.2700866402593 2.5959532831796 201.86086958216 474.21625809584
+100	717472 8019 17271 27653 55.7 81.7 261 0.25418006607564 20.550209194566 4354.619835045 82214.316985092
+94	725491 7778 17213 27653 55.6 81.7 262 25.025859039295 44.813648852533 9381.5602349958 347873.97402073
+93	733269 7769 17213 27653 55.6 81.7 262 28.044337389549 460.01022847404 73772.667077966 25717379.884188
+92	741038 5120 17213 30387 55.6 87.9 324 0 2 361 609
+103	746158 9226 17386 30387 55.8 87.9 322 0.69834123465735 15.075525568031 1461.0901780904 9951.7541424899
+102	755384 10048 17386 30387 55.8 87.9 322 -4.5 2.5817953732796 199.45496835549 873.70209004196
+99	765432 9589 17271 30387 55.7 87.9 323 0.24725245826598 20.23494950906 4354.6527127159 66578.113941271
+91	775021 9626 17213 30387 55.6 87.9 324 28.205692612937 44.690597636962 11888.879626141 443774.82042996
+90	784647 9627 17213 30387 55.6 87.9 324 28.357235074153 459.56143453489 92779.491056256 31889060.6953
+vector 144 HighWayScenario.node[24].veinsmobility posx ETV
+vector 145 HighWayScenario.node[24].veinsmobility posy ETV
+vector 146 HighWayScenario.node[24].veinsmobility laneid ETV
+vector 147 HighWayScenario.node[25].veinsmobility posx ETV
+vector 148 HighWayScenario.node[25].veinsmobility posy ETV
+vector 149 HighWayScenario.node[25].veinsmobility laneid ETV
+vector 150 HighWayScenario.node[26].veinsmobility posx ETV
+vector 151 HighWayScenario.node[26].veinsmobility posy ETV
+vector 152 HighWayScenario.node[26].veinsmobility laneid ETV
+vector 153 HighWayScenario.node[24].veinsmobility speed ETV
+vector 154 HighWayScenario.node[25].veinsmobility speed ETV
+vector 155 HighWayScenario.node[26].veinsmobility speed ETV
+vector 156 HighWayScenario.node[24].veinsmobility acceleration ETV
+vector 157 HighWayScenario.node[24].veinsmobility co2emission ETV
+vector 158 HighWayScenario.node[25].veinsmobility acceleration ETV
+vector 159 HighWayScenario.node[25].veinsmobility co2emission ETV
+vector 160 HighWayScenario.node[26].veinsmobility acceleration ETV
+vector 161 HighWayScenario.node[26].veinsmobility co2emission ETV
+98	795390 5436 17213 31324 55.6 89.9 344 0 2 437 833
+107	800826 9718 17386 31324 55.8 89.9 342 0.973 10.325404934014 992.86450471473 4110.4682459811
+106	810544 10913 17386 31324 55.8 89.9 342 -1.2703134503681 2.5993909878889 137.9463542571 366.82293302751
+101	821457 10534 17271 31324 55.7 89.9 343 0.24948502009572 14.078341149078 4350.7929314103 58750.339376744
+97	831991 10230 17213 31324 55.6 89.9 344 21.809213389166 48.016851790643 12407.851099224 478558.84458541
+96	842221 10205 17213 31324 55.6 89.9 344 27.448182105051 460.45902203295 90963.234510525 30266754.622329
+116	852426 4266 21062 32464 66.7 92 254 0 2 297 545
+125	856692 7323 21349 32464 66.9 92 252 0.17357045431538 16.809977260461 1429.9600846142 12869.218428286
+124	864015 7914 21349 32464 66.9 92 252 -2.6117348286532 2.599495222047 218.14537657119 632.63963266971
+119	871929 7762 21234 32464 66.8 92 253 0.25772540312656 22.997146770296 4362.1329819211 86918.305208584
+115	879691 7796 21062 32464 66.7 92 254 21.825693487837 47.956512407686 9276.1370272361 361594.27519203
+114	887487 7802 21062 32464 66.7 92 254 27.118990985258 460.45902203295 71929.182255281 25377915.953312
+110	895289 4419 21062 32712 66.7 92.9 263 0 2 322 604
+121	899708 7752 21349 32712 66.9 92.9 261 0.37493102017041 14.489513667104 1328.8131492338 10007.749385326
+120	907460 8220 21349 32712 66.9 92.9 261 -4.5 2.5984301561722 212.54937965723 591.23843526208
+117	915680 8037 21234 32712 66.8 92.9 262 0.25241574558266 21.531306420298 4342.5558184286 82464.762790969
+109	923717 8070 21062 32712 66.7 92.9 263 28.200601510382 44.227871596976 9691.790314507 364175.42333886
+108	931787 8076 21062 32712 66.7 92.9 263 29.690972566032 459.56143453489 75638.578413995 26577517.248389
+113	939863 5123 21062 34161 66.7 97.1 305 0 1 104 104
+123	944986 8766 21349 34161 66.9 97.1 303 0.77249807708145 13.416998876932 1171.1832428501 6769.1035712038
+122	953752 9551 21349 34161 66.9 97.1 303 -4.5 2.5962321046812 178.7961082383 611.54398666833
+118	963303 9324 21234 34161 66.8 97.1 304 0.25809777799528 18.245155334784 4347.1874637769 71429.623751983
+112	972627 9355 21062 34161 66.7 97.1 305 21.800119440561 43.752020661163 10379.21687975 371682.04530412
+111	981982 9355 21062 34161 66.7 97.1 305 28.213439133935 460.01022847404 87111.654103044 30575162.086534
+vector 162 HighWayScenario.node[27].veinsmobility posx ETV
+vector 163 HighWayScenario.node[27].veinsmobility posy ETV
+vector 164 HighWayScenario.node[27].veinsmobility laneid ETV
+vector 165 HighWayScenario.node[28].veinsmobility posx ETV
+vector 166 HighWayScenario.node[28].veinsmobility posy ETV
+vector 167 HighWayScenario.node[28].veinsmobility laneid ETV
+vector 168 HighWayScenario.node[29].veinsmobility posx ETV
+vector 169 HighWayScenario.node[29].veinsmobility posy ETV
+vector 170 HighWayScenario.node[29].veinsmobility laneid ETV
+128	991874 3746 25785 34899 77.8 100 223 0 2 177 263
+139	995620 6345 25901 34899 78 100 221 0.973 11.538572201303 938.39613940141 5629.640981597
+138	1001965 6869 25901 34899 78 100 221 -4.5 2.5992902378784 164.07497117841 675.23710659399
+135	1008834 6819 25843 34899 77.9 100 222 0.2483353979995 16.655832515841 2508.4874824145 31725.720509459
+127	1015653 6838 25785 34899 77.8 100 223 34.933228264969 44.762018398433 8797.360632046 349194.61186851
+126	1022491 6847 25785 34899 77.8 100 223 212.13517993914 459.56143453489 79887.513244604 29935661.02877
+146	1029338 1881 30718 34899 88.9 100 112 0 1 21 21
+157	1031219 3235 30899 34899 89.1 100 110 0.973 10.594821247452 533.31127367254 3330.8889262783
+156	1034454 3395 30899 34899 89.1 100 110 -4.2074516836454 2.587411686941 154.03203514321 425.69270711699
+153	1037849 3411 30898 34899 89 100 111 0.24997865417926 15.6531821685 950.99465223229 9907.9503353341
+145	1041260 3441 30718 34899 88.9 100 112 34.933228264969 44.708307126282 4378.0144274273 172265.6089379
+144	1044701 3433 30718 34899 88.9 100 112 366.8527115182 459.56143453489 47662.424588361 20370561.237543
+164	1048134 16 34899 34899 100 100 1 0 0 0 0
+163	1048150 30 34899 34899 100 100 1 34.933228264969 34.933228264969 34.933228264969 1220.3304370124
+162	1048180 30 34899 34899 100 100 1 459.56143453489 459.56143453489 459.56143453489 211196.71211177
+131	1048210 3746 25785 34899 77.8 100 223 1 1 223 223
+141	1051956 6482 25901 34899 78 100 221 0.66283975738609 14.379569320282 1025.2521374769 6855.2679561672
+140	1058438 6982 25901 34899 78 100 221 -1.0882335723844 2.5842975436477 191.8913368249 437.76300771317
+136	1065420 6809 25843 34899 77.9 100 222 0.25028403314529 19.543802034526 3420.7458120079 60608.136994845
+130	1072229 6843 25785 34899 77.8 100 223 25.437112367792 44.808064743193 8387.825242432 323140.27705695
+129	1079072 6840 25785 34899 77.8 100 223 121.05527437572 460.01022847404 72098.860107431 25912594.992966
+149	1085912 1881 30718 34899 88.9 100 112 1 1 112 112
+159	1087793 3359 30899 34899 89.1 100 110 0.973 16.141023535992 749.89905321172 6581.7259426681
+158	1091152 3389 30899 34899 89.1 100 110 -0.66573004834353 2.587944722781 207.55254328127 433.96649896125
+154	1094541 3411 30898 34899 89 100 111 0.24901665728749 21.086078150497 1248.950213211 18492.82135986
+148	1097952 3432 30718 34899 88.9 100 112 38.103834558485 44.817371843872 4673.7265237689 195696.65653339
+147	1101384 3435 30718 34899 88.9 100 112 337.64827781925 460.01022847404 46926.068030951 19813844.038632
+167	1104819 16 34899 34899 100 100 1 1 1 1 1
+166	1104835 30 34899 34899 100 100 1 38.103834558485 38.103834558485 38.103834558485 1451.9022080604
+165	1104865 30 34899 34899 100 100 1 460.01022847404 460.01022847404 460.01022847404 211609.41030074
+134	1104895 3746 25785 34899 77.8 100 223 1 2 397 745
+143	1108641 6298 25901 34899 78 100 221 0.973 10.981950967246 760.44904856003 3756.3061142297
+142	1114939 7004 25901 34899 78 100 221 -4.3159304118474 2.5607986064861 142.24812240099 375.24377238391
+137	1121943 6814 25843 34899 77.9 100 222 0.25765896094334 14.564709270282 2712.131083067 36753.881099882
+133	1128757 6848 25785 34899 77.8 100 223 30.118729339284 48.014651877446 9331.3616531428 396386.6187893
+132	1135605 6852 25785 34899 77.8 100 223 191.24173444062 460.45902203295 77212.216619005 28356311.833383
+152	1142457 1881 30718 34899 88.9 100 112 2 2 224 448
+161	1144338 3279 30899 34899 89.1 100 110 0.973 12.716381789325 627.11926878099 4648.5947991707
+160	1147617 3391 30899 34899 89.1 100 110 -1.9444444444444 2.5722259696179 171.64552218695 420.09993167051
+155	1151008 3406 30898 34899 89 100 111 0.24733512884355 17.411887347539 1135.7438101615 14615.791839931
+151	1154414 3439 30718 34899 88.9 100 112 41.274438159653 48.009212700293 5033.2619414983 226877.0781638
+150	1157853 3441 30718 34899 88.9 100 112 349.00204729969 460.45902203295 47161.565750121 19992525.322212
+170	1161294 16 34899 34899 100 100 1 2 2 2 4
+169	1161310 30 34899 34899 100 100 1 41.274438159653 41.274438159653 41.274438159653 1703.579245395
+168	1161340 30 34899 34899 100 100 1 460.45902203295 460.45902203295 460.45902203295 212022.51097154
+

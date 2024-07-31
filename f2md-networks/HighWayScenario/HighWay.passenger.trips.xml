@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Tue Jun 11 07:01:29 2024 by Eclipse SUMO duarouter Version 1.5.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="/home/f2md/F2MD/Programs/sumo-1.5.0/tools/2024-06-11-07-01-28/osm.net.xml"/>
+        <route-files value="/home/f2md/F2MD/Programs/sumo-1.5.0/tools/2024-06-11-07-01-28/osm.passenger.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/f2md/F2MD/Programs/sumo-1.5.0/tools/2024-06-11-07-01-28/osm.passenger.trips.xml.tmp"/>
+        <write-trips value="true"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="veh_passenger" vClass="passenger" color="0,255,0"/>	
+    <flow id="flow0" type="veh_passenger"  begin="0" end="5000"  number="450" from="804598787" to="804598787" departLane="0" arrivalLane="2" />
+    <flow id="flow1" type="veh_passenger"  begin="0" end="5000"  number="450" from="804598787" to="804598787" departLane="1" arrivalLane="current" />
+    <flow id="flow2" type="veh_passenger"  begin="0" end="5000"  number="450" from="804598787" to="804598787" departLane="2" arrivalLane="0" />
+</routes>

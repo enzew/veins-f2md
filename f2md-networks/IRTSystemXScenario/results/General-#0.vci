@@ -1,0 +1,174 @@
+file 11384 1717490359                                           
+version 2
+run General-0-20240604-01:39:00-55558
+attr configname General
+attr datetime 20240604-01:39:00
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network IRTSystemXScenario
+attr processid 55558
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.debug false
+param **.coreDebug false
+param *.playgroundSizeX 3900m
+param *.playgroundSizeY 1700m
+param *.playgroundSizeZ 50m
+param *.annotations.draw true
+param *.obstacles.obstacles "xmldoc(\"config.xml\", \"//AnalogueModel[@type='SimpleObstacleShadowing']/obstacles\")"
+param *.manager.updateInterval 0.1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown false
+param *.manager.launchConfig "xmldoc(\"IRTSystemX.launchd.xml\")"
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 420m
+param *.connectionManager.drawMaxIntfDist true
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.minPowerLevel -89dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.node[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.node[*].applType "\"JosephVeinsApp\""
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons true
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].appl.serialNumber "\"IRTSystemXScenario-ITSG5\""
+param *.node[*].appl.savePath "\"../../../f2md-results/\""
+param *.node[*].appl.UseAttacksServer false
+param *.node[*].appl.MixLocalAttacks false
+param *.node[*].appl.RandomLocalMix false
+param *.node[*].appl.LOCAL_ATTACKER_PROB 0.2
+param *.node[*].appl.LOCAL_ATTACK_TYPE 5
+param *.node[*].appl.GLOBAL_ATTACKER_PROB 0.0
+param *.node[*].appl.GLOBAL_ATTACK_TYPE 20
+param *.node[*].appl.EnablePC false
+param *.node[*].appl.PC_TYPE 5
+param *.node[*].appl.EnableV1 true
+param *.node[*].appl.EnableV2 true
+param *.node[*].appl.SaveStatsV1 true
+param *.node[*].appl.SaveStatsV2 true
+param *.node[*].appl.checksVersionV1 2
+param *.node[*].appl.checksVersionV2 2
+param *.node[*].appl.appTypeV1 0
+param *.node[*].appl.appTypeV2 2
+param *.node[*].appl.appl.REPORT_VERSION 2
+param *.node[*].appl.sendReportsV1 true
+param *.node[*].appl.sendReportsV2 false
+param *.node[*].appl.maHostV1 "\"localhost\""
+param *.node[*].appl.maHostV2 "\"localhost\""
+param *.node[*].appl.maPortV1 9980
+param *.node[*].appl.maPortV2 9981
+param *.node[*].appl.writeSelfMsg false
+param *.node[*].appl.writeListSelfMsg false
+param *.node[*].appl.writeBsmsV1 false
+param *.node[*].appl.writeBsmsV2 false
+param *.node[*].appl.writeListBsmsV1 false
+param *.node[*].appl.writeListBsmsV2 false
+param *.node[*].appl.writeReportsV1 true
+param *.node[*].appl.writeReportsV2 false
+param *.node[*].appl.writeListReportsV1 false
+param *.node[*].appl.writeListReportsV2 false
+param *.node[*].appl.writeVeReMi true
+param *.node[*].appl.VeReMiSliceTime 3600
+param *.node[*].appl.veremiConf true
+param *.node[*].appl.randomConf false
+param *.node[*].appl.variableConf false
+param *.node[*].appl.confPos 10.0
+param *.node[*].appl.confSpd 0.05
+param *.node[*].appl.confHea 20.0
+param *.node[*].appl.confAcc 0.01
+param *.node[*].appl.confPrec 100.0
+param *.node[*].appl.minConf 0.20
+param *.node[*].appl.SAVE_PERIOD 10
+param *.node[*].appl.PRINT_PERIOD 60
+param *.node[*].appl.START_SAVE 0
+param *.node[*].appl.START_ATTACK 10
+param *.node[*].appl.enableVarThreV1 false
+param *.node[*].appl.enableVarThreV2 false
+param *.node[*].appl.MAX_PROXIMITY_RANGE_L 30
+param *.node[*].appl.MAX_PROXIMITY_RANGE_W 3
+param *.node[*].appl.MAX_PROXIMITY_DISTANCE 2
+param *.node[*].appl.MAX_CONFIDENCE_RANGE 10
+param *.node[*].appl.MAX_PLAUSIBLE_RANGE 420
+param *.node[*].appl.MAX_TIME_DELTA 3.1
+param *.node[*].appl.MAX_DELTA_INTER 2.0
+param *.node[*].appl.MAX_SA_RANGE 420
+param *.node[*].appl.MAX_SA_TIME 2.1
+param *.node[*].appl.MAX_KALMAN_TIME 3.1
+param *.node[*].appl.KALMAN_POS_RANGE 1.0
+param *.node[*].appl.KALMAN_SPEED_RANGE 4.0
+param *.node[*].appl.KALMAN_MIN_POS_RANGE 4.0
+param *.node[*].appl.KALMAN_MIN_SPEED_RANGE 1.0
+param *.node[*].appl.MIN_MAX_SPEED 40
+param *.node[*].appl.MIN_MAX_ACCEL 3
+param *.node[*].appl.MIN_MAX_DECEL 4.5
+param *.node[*].appl.MAX_MGT_RNG 4
+param *.node[*].appl.MAX_MGT_RNG_DOWN 6.2
+param *.node[*].appl.MAX_MGT_RNG_UP 2.1
+param *.node[*].appl.MAX_BEACON_FREQUENCY 0.99
+param *.node[*].appl.MAX_DISTANCE_FROM_ROUTE 2
+param *.node[*].appl.MAX_NON_ROUTE_SPEED -1
+param *.node[*].appl.MAX_HEADING_CHANGE 90
+param *.node[*].appl.DELTA_BSM_TIME 5
+param *.node[*].appl.DELTA_REPORT_TIME 5
+param *.node[*].appl.POS_HEADING_TIME 1.1
+param *.node[*].appl.MAX_TARGET_TIME 2
+param *.node[*].appl.MAX_ACCUSED_TIME 2
+param *.node[*].appl.parVar 0.55
+param *.node[*].appl.RandomPosOffsetX 70.0
+param *.node[*].appl.RandomPosOffsetY 70.0
+param *.node[*].appl.RandomSpeedX 40.0
+param *.node[*].appl.RandomSpeedY 40.0
+param *.node[*].appl.RandomSpeedOffsetX 7.0
+param *.node[*].appl.RandomSpeedOffsetY 7.0
+param *.node[*].appl.RandomAccelX 2.0
+param *.node[*].appl.RandomAccelY 2.0
+param *.node[*].appl.StopProb 0.05
+param *.node[*].appl.StaleMessages_Buffer 60
+param *.node[*].appl.DosMultipleFreq 4
+param *.node[*].appl.DosMultipleFreqSybil 2
+param *.node[*].appl.ReplaySeqNum 6
+param *.node[*].appl.SybilVehNumber 5
+param *.node[*].appl.SelfSybil false
+param *.node[*].appl.SybilDistanceX 5
+param *.node[*].appl.SybilDistanceY 2
+param *.node[*].appl.Period_Change_Time 240
+param *.node[*].appl.Tolerance_Buffer 10
+param *.node[*].appl.Period_Change_Distance 80
+param *.node[*].appl.Random_Change_Chance 0.1
+param *.node[*].appl.InitialHistory 5
+param *.node[*].appl.CollectionPeriod 10
+param *.node[*].appl.UntolerancePeriod 5
+param *.node[*].veinsmobilityType.debug false
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+param *.node[*].veinsmobility.setHostSpeed true
+param *.node[*].veinsmobility.setHostAcceleration true
+
+vector 0 IRTSystemXScenario.node[0].veinsmobility posx ETV
+vector 1 IRTSystemXScenario.node[0].veinsmobility posy ETV
+vector 2 IRTSystemXScenario.node[0].veinsmobility speed ETV
+vector 3 IRTSystemXScenario.node[0].veinsmobility acceleration ETV
+vector 4 IRTSystemXScenario.node[0].veinsmobility co2emission ETV
+0	6731 979 2 77 0.1 4 40 2189.6567832168 2204.5374577574 87791.438667649 192684258.59531
+1	7710 985 2 77 0.1 4 40 750.53944055944 753.23205827978 30058.757145696 22588249.623661
+2	8695 950 3 77 0.2 4 39 0.25608864674508 7.6871619106303 158.91345471795 824.75633488855
+3	9645 816 4 77 0.3 4 38 -4.5 2.6 74.310732638852 195.00056965773
+4	10461 922 4 77 0.3 4 38 0.973 6.1683111712298 129.95494937712 528.9813427132
+

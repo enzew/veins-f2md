@@ -1,0 +1,263 @@
+file 1025791 1717760293                                         
+version 2
+run General-0-20240607-04:35:33-4933
+attr configname General
+attr datetime 20240607-04:35:33
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network RosScenario
+attr processid 4933
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.debug false
+param **.coreDebug false
+param *.playgroundSizeX 5000m
+param *.playgroundSizeY 5000m
+param *.playgroundSizeZ 150m
+param *.annotations.draw true
+param *.manager.updateInterval 0.1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown false
+param *.manager.launchConfig "xmldoc(\"Ros.launchd.xml\")"
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 420m
+param *.connectionManager.drawMaxIntfDist true
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.minPowerLevel -89dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.node[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.node[*].applType "\"JosephVeinsApp\""
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons true
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].appl.serialNumber "\"RosScenario-ITSG5\""
+param *.node[*].appl.savePath "\"../../../f2md-results/\""
+param *.node[*].appl.UseAttacksServer false
+param *.node[*].appl.MixLocalAttacks false
+param *.node[*].appl.RandomLocalMix false
+param *.node[*].appl.LOCAL_ATTACKER_PROB 0.2
+param *.node[*].appl.LOCAL_ATTACK_TYPE 5
+param *.node[*].appl.GLOBAL_ATTACKER_PROB 0.0
+param *.node[*].appl.GLOBAL_ATTACK_TYPE 20
+param *.node[*].appl.EnablePC false
+param *.node[*].appl.PC_TYPE 5
+param *.node[*].appl.EnableV1 true
+param *.node[*].appl.EnableV2 true
+param *.node[*].appl.SaveStatsV1 true
+param *.node[*].appl.SaveStatsV2 true
+param *.node[*].appl.checksVersionV1 2
+param *.node[*].appl.checksVersionV2 2
+param *.node[*].appl.appTypeV1 5
+param *.node[*].appl.appTypeV2 2
+param *.node[*].appl.appl.REPORT_VERSION 2
+param *.node[*].appl.sendReportsV1 false
+param *.node[*].appl.sendReportsV2 false
+param *.node[*].appl.maHostV1 "\"localhost\""
+param *.node[*].appl.maHostV2 "\"localhost\""
+param *.node[*].appl.maPortV1 9980
+param *.node[*].appl.maPortV2 9981
+param *.node[*].appl.writeSelfMsg false
+param *.node[*].appl.writeListSelfMsg false
+param *.node[*].appl.writeBsmsV1 true
+param *.node[*].appl.writeBsmsV2 false
+param *.node[*].appl.writeListBsmsV1 true
+param *.node[*].appl.writeListBsmsV2 false
+param *.node[*].appl.writeReportsV1 false
+param *.node[*].appl.writeReportsV2 false
+param *.node[*].appl.writeListReportsV1 false
+param *.node[*].appl.writeListReportsV2 false
+param *.node[*].appl.writeVeReMi false
+param *.node[*].appl.VeReMiSliceTime 3600
+param *.node[*].appl.veremiConf true
+param *.node[*].appl.randomConf false
+param *.node[*].appl.variableConf false
+param *.node[*].appl.confPos 10.0
+param *.node[*].appl.confSpd 0.05
+param *.node[*].appl.confHea 20.0
+param *.node[*].appl.confAcc 0.01
+param *.node[*].appl.confPrec 100.0
+param *.node[*].appl.minConf 0.20
+param *.node[*].appl.SAVE_PERIOD 10
+param *.node[*].appl.PRINT_PERIOD 60
+param *.node[*].appl.START_SAVE 0
+param *.node[*].appl.START_ATTACK 10
+param *.node[*].appl.enableVarThreV1 false
+param *.node[*].appl.enableVarThreV2 false
+param *.node[*].appl.MAX_PROXIMITY_RANGE_L 30
+param *.node[*].appl.MAX_PROXIMITY_RANGE_W 3
+param *.node[*].appl.MAX_PROXIMITY_DISTANCE 2
+param *.node[*].appl.MAX_CONFIDENCE_RANGE 10
+param *.node[*].appl.MAX_PLAUSIBLE_RANGE 420
+param *.node[*].appl.MAX_TIME_DELTA 3.1
+param *.node[*].appl.MAX_DELTA_INTER 2.0
+param *.node[*].appl.MAX_SA_RANGE 420
+param *.node[*].appl.MAX_SA_TIME 2.1
+param *.node[*].appl.MAX_KALMAN_TIME 3.1
+param *.node[*].appl.KALMAN_POS_RANGE 1.0
+param *.node[*].appl.KALMAN_SPEED_RANGE 4.0
+param *.node[*].appl.KALMAN_MIN_POS_RANGE 4.0
+param *.node[*].appl.KALMAN_MIN_SPEED_RANGE 1.0
+param *.node[*].appl.MIN_MAX_SPEED 40
+param *.node[*].appl.MIN_MAX_ACCEL 3
+param *.node[*].appl.MIN_MAX_DECEL 4.5
+param *.node[*].appl.MAX_MGT_RNG 4
+param *.node[*].appl.MAX_MGT_RNG_DOWN 6.2
+param *.node[*].appl.MAX_MGT_RNG_UP 2.1
+param *.node[*].appl.MAX_BEACON_FREQUENCY 0.99
+param *.node[*].appl.MAX_DISTANCE_FROM_ROUTE 2
+param *.node[*].appl.MAX_NON_ROUTE_SPEED -1
+param *.node[*].appl.MAX_HEADING_CHANGE 90
+param *.node[*].appl.DELTA_BSM_TIME 5
+param *.node[*].appl.DELTA_REPORT_TIME 5
+param *.node[*].appl.POS_HEADING_TIME 1.1
+param *.node[*].appl.MAX_TARGET_TIME 2
+param *.node[*].appl.MAX_ACCUSED_TIME 2
+param *.node[*].appl.parVar 0.55
+param *.node[*].appl.RandomPosOffsetX 70.0
+param *.node[*].appl.RandomPosOffsetY 70.0
+param *.node[*].appl.RandomSpeedX 40.0
+param *.node[*].appl.RandomSpeedY 40.0
+param *.node[*].appl.RandomSpeedOffsetX 7.0
+param *.node[*].appl.RandomSpeedOffsetY 7.0
+param *.node[*].appl.RandomAccelX 2.0
+param *.node[*].appl.RandomAccelY 2.0
+param *.node[*].appl.StopProb 0.05
+param *.node[*].appl.StaleMessages_Buffer 60
+param *.node[*].appl.DosMultipleFreq 4
+param *.node[*].appl.DosMultipleFreqSybil 2
+param *.node[*].appl.ReplaySeqNum 6
+param *.node[*].appl.SybilVehNumber 5
+param *.node[*].appl.SelfSybil false
+param *.node[*].appl.SybilDistanceX 5
+param *.node[*].appl.SybilDistanceY 2
+param *.node[*].appl.Period_Change_Time 240
+param *.node[*].appl.Tolerance_Buffer 10
+param *.node[*].appl.Period_Change_Distance 80
+param *.node[*].appl.Random_Change_Chance 0.1
+param *.node[*].appl.InitialHistory 5
+param *.node[*].appl.CollectionPeriod 10
+param *.node[*].appl.UntolerancePeriod 5
+param *.node[*].veinsmobilityType.debug false
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+param *.node[*].veinsmobility.setHostSpeed true
+param *.node[*].veinsmobility.setHostAcceleration true
+
+vector 0 RosScenario.node[0].veinsmobility posx ETV
+vector 1 RosScenario.node[0].veinsmobility posy ETV
+vector 2 RosScenario.node[0].veinsmobility speed ETV
+vector 3 RosScenario.node[0].veinsmobility acceleration ETV
+vector 4 RosScenario.node[0].veinsmobility co2emission ETV
+vector 5 RosScenario.node[1].veinsmobility posx ETV
+vector 6 RosScenario.node[1].veinsmobility posy ETV
+vector 7 RosScenario.node[1].veinsmobility speed ETV
+vector 8 RosScenario.node[1].veinsmobility acceleration ETV
+vector 9 RosScenario.node[1].veinsmobility co2emission ETV
+vector 10 RosScenario.node[2].veinsmobility posx ETV
+vector 11 RosScenario.node[2].veinsmobility posy ETV
+vector 12 RosScenario.node[2].veinsmobility speed ETV
+vector 13 RosScenario.node[2].veinsmobility acceleration ETV
+vector 14 RosScenario.node[2].veinsmobility co2emission ETV
+vector 15 RosScenario.node[3].veinsmobility posx ETV
+vector 16 RosScenario.node[3].veinsmobility posy ETV
+vector 17 RosScenario.node[3].veinsmobility speed ETV
+vector 18 RosScenario.node[3].veinsmobility acceleration ETV
+vector 19 RosScenario.node[3].veinsmobility co2emission ETV
+vector 20 RosScenario.node[4].veinsmobility posx ETV
+vector 21 RosScenario.node[4].veinsmobility posy ETV
+vector 22 RosScenario.node[4].veinsmobility speed ETV
+vector 23 RosScenario.node[4].veinsmobility acceleration ETV
+vector 24 RosScenario.node[4].veinsmobility co2emission ETV
+vector 25 RosScenario.node[5].veinsmobility posx ETV
+vector 26 RosScenario.node[5].veinsmobility posy ETV
+vector 27 RosScenario.node[5].veinsmobility speed ETV
+vector 28 RosScenario.node[5].veinsmobility acceleration ETV
+vector 29 RosScenario.node[5].veinsmobility co2emission ETV
+9	7958 14763 211 3971 14.7 75.9 613 0.973 8.2917834301686 1444.1106063525 5065.2345315004
+8	22721 17032 211 3971 14.7 75.9 613 -4.5 2.6 84.424711936323 1303.6049912072
+7	39753 16791 210 3971 14.6 75.9 614 0.26 11.558632160007 5139.7258104722 44168.336205819
+6	56544 16818 209 3971 14.5 75.9 615 883.55990287444 1057.1036840463 600995.863737 589157631.58569
+5	73362 16830 209 3971 14.5 75.9 615 497.97949779811 827.68 409111.9137826 279304838.07372
+4	90192 19528 76 5164 7.5 89 816 0.973 7.1371464949166 1764.8060425074 5309.5434993182
+3	109720 22931 76 5164 7.5 89 816 -4.5 2.6 89.997135695161 1185.5237464503
+2	132651 22304 75 5164 7.4 89 817 0.24883443946135 9.2987363476176 7082.9118655605 63219.519904297
+1	154955 22343 74 5164 7.3 89 818 704.10574603225 1073.0274258773 733279.40156717 668271766.22654
+0	177298 22340 74 5164 7.3 89 818 1670.1591363521 2004.4133115092 1511373.4133836 2800649013.2137
+vector 30 RosScenario.node[6].veinsmobility posx ETV
+vector 31 RosScenario.node[6].veinsmobility posy ETV
+vector 32 RosScenario.node[6].veinsmobility speed ETV
+vector 33 RosScenario.node[6].veinsmobility acceleration ETV
+vector 34 RosScenario.node[6].veinsmobility co2emission ETV
+vector 35 RosScenario.node[7].veinsmobility posx ETV
+vector 36 RosScenario.node[7].veinsmobility posy ETV
+vector 37 RosScenario.node[7].veinsmobility speed ETV
+vector 38 RosScenario.node[7].veinsmobility acceleration ETV
+vector 39 RosScenario.node[7].veinsmobility co2emission ETV
+19	200200 17406 1469 8023 43.6 113 695 0.973 7.6888146079776 1479.5405812585 4566.1462889969
+18	217606 20188 1469 8023 43.6 113 695 -4.5 2.6 -28.057118284101 1292.1010193327
+17	237794 19711 1468 8023 43.5 113 696 0 11.279942461263 6332.4031743216 63550.299458315
+16	257505 20112 1452 8023 43.4 113 697 736.1506689998 1218.2280597015 689640.08807354 695433185.16922
+15	277617 20137 1452 8023 43.4 113 697 1291.7064744458 1643.0708955224 999930.61927814 1442078004.1706
+vector 40 RosScenario.node[8].veinsmobility posx ETV
+vector 41 RosScenario.node[8].veinsmobility posy ETV
+vector 42 RosScenario.node[8].veinsmobility speed ETV
+vector 43 RosScenario.node[8].veinsmobility acceleration ETV
+vector 44 RosScenario.node[8].veinsmobility co2emission ETV
+vector 45 RosScenario.node[9].veinsmobility posx ETV
+vector 46 RosScenario.node[9].veinsmobility posy ETV
+vector 47 RosScenario.node[9].veinsmobility speed ETV
+vector 48 RosScenario.node[9].veinsmobility acceleration ETV
+vector 49 RosScenario.node[9].veinsmobility co2emission ETV
+10	298316 42321 407 18431 21.7 165.7 1441 493.68645320034 1055.2431523226 1111719.3722739 879976945.25454
+11	340637 41688 407 18431 21.7 165.7 1441 822.33573652694 1062.1169584002 1370134.199073 1306970077.9787
+12	382325 33352 408 18431 21.8 165.7 1440 0 11.442713821141 6896.1050770781 63206.35715871
+13	415677 33583 409 18431 21.9 165.7 1439 -4.5 2.6 28.57926624833 1833.496901664
+14	449260 33145 409 18431 21.9 165.7 1439 0.973 8.3645039544779 2437.6272337089 6601.9665743827
+20	482405 30012 2800 18431 65 165.7 1008 491.46655109489 811.55741200201 734337.28151912 544925437.09271
+21	512417 29759 2800 18431 65 165.7 1008 940.22041501074 1099.2837226277 989498.6801242 973916871.4813
+22	542176 23332 2801 18431 65.1 165.7 1007 0 7.356377186079 3599.0899931893 25598.500438524
+23	565508 23707 2802 18431 65.2 165.7 1006 -4.5 2.6 -72.625626272125 976.71279497658
+24	589215 23099 2802 18431 65.2 165.7 1006 0.973 6.0227874620248 1384.717393177 2471.3561872616
+25	612314 27964 3439 18431 72.2 165.7 936 491.46655109489 794.21405799614 674738.66008613 493231392.25445
+26	640278 27946 3439 18431 72.2 165.7 936 945.23310237637 1099.2837226277 925353.21518176 916494233.38321
+27	668224 21109 3440 18431 72.3 165.7 935 0 9.6270058423828 3417.789999201 28670.110929711
+28	689333 21209 3441 18431 72.4 165.7 934 -4.5174395090477 2.6 -96.270058423828 1667.6061850603
+29	710542 21193 3441 18431 72.4 165.7 934 0.973 7.1167703715975 1441.8746192868 3454.1719831974
+30	731735 21672 5573 18431 93.9 165.7 719 491.46655109489 787.95510124124 500516.1556446 354947381.70681
+31	753407 21696 5573 18431 93.9 165.7 719 949.36675253779 1099.2837226277 718821.5711109 720252156.87345
+32	775103 21270 5574 18431 94 165.7 718 0 7.8749708997122 3342.7799084349 24759.90007598
+33	796373 22128 5575 18431 94.1 165.7 717 -3.6395927155575 2.6 -78.658763730027 563.44583873036
+34	818501 18524 5575 18431 94.1 165.7 717 0.973 6.2915006335382 1072.388103754 2077.5772907679
+35	837025 17482 7382 18431 108.3 165.7 575 830.41275038652 1105.5564380789 573652.55666117 577640213.38137
+36	854507 17480 7382 18431 108.3 165.7 575 497.57364093125 729.22000102827 339503.9682695 205473050.33014
+37	871987 15980 7383 18431 108.4 165.7 574 0 12.74238523706 4400.3899981373 47110.363501312
+38	887967 15960 7384 18431 108.5 165.7 573 -4.5 2.6 -2.4990191897773 1439.5154840297
+39	903927 14941 7384 18431 108.5 165.7 573 0.973 9.2765257765824 1269.3237608975 4418.6130891456
+40	918868 13149 9291 18431 122.8 165.7 430 689.64657750005 1098.6326020685 381541.64125832 344840721.16839
+41	932017 13157 9291 18431 122.8 165.7 430 546.57331887888 780.49507918329 277521.9875914 181302856.65333
+42	945174 13130 9292 18431 122.9 165.7 429 0.25678980639391 14.641869398936 5533.0311066179 76513.578147287
+43	958304 13364 9293 18431 123 165.7 428 -4.5 2.58940726812 20.109912450546 983.65046355069
+44	971668 11934 9293 18431 123 165.7 428 0.973 10.093976455816 1206.4978451569 5124.9291735116
+45	983602 8768 11707 18431 137.2 165.7 286 1176.0302918048 1349.83 358737.04063501 450993154.64693
+46	992370 8762 11707 18431 137.2 165.7 286 759.73057937585 940.71 241715.51361009 205349616.24427
+47	1001132 8487 11708 18431 137.3 165.7 285 0 14.085821721617 2519.5070387062 29796.595814257
+48	1009619 8203 11709 18431 137.4 165.7 284 -4.5 2.5851815555245 105.28401183856 1131.8864294669
+49	1017822 7968 11709 18431 137.4 165.7 284 0.973 9.641399324976 862.75556208184 3820.7610745416
+

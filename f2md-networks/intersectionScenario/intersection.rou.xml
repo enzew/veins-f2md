@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Tue Jun 11 07:01:29 2024 by Eclipse SUMO duarouter Version 1.5.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="/home/f2md/F2MD/Programs/sumo-1.5.0/tools/2024-06-11-07-01-28/osm.net.xml"/>
+        <route-files value="/home/f2md/F2MD/Programs/sumo-1.5.0/tools/2024-06-11-07-01-28/osm.passenger.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/f2md/F2MD/Programs/sumo-1.5.0/tools/2024-06-11-07-01-28/osm.passenger.trips.xml.tmp"/>
+        <write-trips value="true"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+    <!--vType id="veh_passenger" vClass="passenger"/-->	
+
+
+<routes>
+    <!--vType id="car" accel="1.0" decel="1.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="19.44" laneChangeModel="LC2013"/-->
+    
+    <vType id="veh_passenger" vClass="passenger" color="0,255,0"/>	
+    
+  
+    <flow id="flow0" type="veh_passenger"  begin="0" end="5000"  number="150" from="-gneE6" to="gneE7" departLane="0" arrivalLane="0" />
+    <flow id="flow1" type="veh_passenger"  begin="0" end="5000"  number="180" from="-gneE6" to="gneE5" departLane="1" arrivalLane="1" />
+
+    <flow id="flow2" type="veh_passenger"  begin="0" end="5000"  number="150" from="-gneE5" to="gneE4" departLane="0" arrivalLane="0" />
+    <flow id="flow3" type="veh_passenger"  begin="0" end="5000"  number="180" from="-gneE5" to="gneE6" departLane="1" arrivalLane="1" />
+
+    <flow id="flow4" type="veh_passenger"  begin="0" end="5000"  number="150" from="-gneE4" to="gneE6" departLane="0" arrivalLane="0" />
+    <flow id="flow5" type="veh_passenger"  begin="0" end="5000"  number="180" from="-gneE4" to="gneE7" departLane="1" arrivalLane="1" />
+
+
+    <flow id="flow6" type="veh_passenger"  begin="0" end="5000"  number="150" from="-gneE7" to="gneE5" departLane="0" arrivalLane="0" />
+    <flow id="flow7" type="veh_passenger"  begin="0" end="5000"  number="180" from="-gneE7" to="gneE4" departLane="1" arrivalLane="1" />
+
+
+</routes>
+
+

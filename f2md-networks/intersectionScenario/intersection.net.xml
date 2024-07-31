@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Thu 27 Jun 2024 02:37:53 AM PDT by Eclipse SUMO netedit Version 1.5.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="intersection.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="intersection.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<net version="1.3" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="-45.00,-45.00,45.00,45.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id=":intersection_0" function="internal">
+        <lane id=":intersection_0_0" index="0" speed="6.51" length="9.03" shape="-4.80,10.40 -5.15,7.95 -6.20,6.20 -7.95,5.15 -10.40,4.80"/>
+    </edge>
+    <edge id=":intersection_1" function="internal">
+        <lane id=":intersection_1_0" index="0" speed="13.89" length="20.80" shape="-4.80,10.40 -4.80,-10.40"/>
+        <lane id=":intersection_1_1" index="1" speed="13.89" length="20.80" shape="-1.60,10.40 -1.60,-10.40"/>
+    </edge>
+    <edge id=":intersection_3" function="internal">
+        <lane id=":intersection_3_0" index="0" speed="9.26" length="6.96" shape="-1.60,10.40 -0.85,5.15 -0.00,3.73"/>
+    </edge>
+    <edge id=":intersection_16" function="internal">
+        <lane id=":intersection_16_0" index="0" speed="9.26" length="12.40" shape="-0.00,3.73 1.40,1.40 5.15,-0.85 10.40,-1.60"/>
+    </edge>
+    <edge id=":intersection_4" function="internal">
+        <lane id=":intersection_4_0" index="0" speed="6.51" length="9.03" shape="10.40,4.80 7.95,5.15 6.20,6.20 5.15,7.95 4.80,10.40"/>
+    </edge>
+    <edge id=":intersection_5" function="internal">
+        <lane id=":intersection_5_0" index="0" speed="13.89" length="20.80" shape="10.40,4.80 -10.40,4.80"/>
+        <lane id=":intersection_5_1" index="1" speed="13.89" length="20.80" shape="10.40,1.60 -10.40,1.60"/>
+    </edge>
+    <edge id=":intersection_7" function="internal">
+        <lane id=":intersection_7_0" index="0" speed="9.26" length="19.35" shape="10.40,1.60 5.15,0.85 1.40,-1.40 -0.85,-5.15 -1.60,-10.40"/>
+    </edge>
+    <edge id=":intersection_8" function="internal">
+        <lane id=":intersection_8_0" index="0" speed="6.51" length="9.03" shape="4.80,-10.40 5.15,-7.95 6.20,-6.20 7.95,-5.15 10.40,-4.80"/>
+    </edge>
+    <edge id=":intersection_9" function="internal">
+        <lane id=":intersection_9_0" index="0" speed="13.89" length="20.80" shape="4.80,-10.40 4.80,10.40"/>
+        <lane id=":intersection_9_1" index="1" speed="13.89" length="20.80" shape="1.60,-10.40 1.60,10.40"/>
+    </edge>
+    <edge id=":intersection_11" function="internal">
+        <lane id=":intersection_11_0" index="0" speed="9.26" length="6.96" shape="1.60,-10.40 0.85,-5.15 0.00,-3.73"/>
+    </edge>
+    <edge id=":intersection_17" function="internal">
+        <lane id=":intersection_17_0" index="0" speed="9.26" length="12.40" shape="0.00,-3.73 -1.40,-1.40 -5.15,0.85 -10.40,1.60"/>
+    </edge>
+    <edge id=":intersection_12" function="internal">
+        <lane id=":intersection_12_0" index="0" speed="6.51" length="9.03" shape="-10.40,-4.80 -7.95,-5.15 -6.20,-6.20 -5.15,-7.95 -4.80,-10.40"/>
+    </edge>
+    <edge id=":intersection_13" function="internal">
+        <lane id=":intersection_13_0" index="0" speed="13.89" length="20.80" shape="-10.40,-4.80 10.40,-4.80"/>
+        <lane id=":intersection_13_1" index="1" speed="13.89" length="20.80" shape="-10.40,-1.60 10.40,-1.60"/>
+    </edge>
+    <edge id=":intersection_15" function="internal">
+        <lane id=":intersection_15_0" index="0" speed="9.26" length="19.35" shape="-10.40,-1.60 -5.15,-0.85 -1.40,1.40 0.85,5.15 1.60,10.40"/>
+    </edge>
+
+    <edge id="-gneE4" from="N" to="intersection" priority="-1">
+        <lane id="-gneE4_0" index="0" speed="13.89" length="34.60" shape="-4.80,45.00 -4.80,10.40"/>
+        <lane id="-gneE4_1" index="1" speed="13.89" length="34.60" shape="-1.60,45.00 -1.60,10.40"/>
+    </edge>
+    <edge id="-gneE5" from="E" to="intersection" priority="-1">
+        <lane id="-gneE5_0" index="0" speed="13.89" length="34.60" shape="45.00,4.80 10.40,4.80"/>
+        <lane id="-gneE5_1" index="1" speed="13.89" length="34.60" shape="45.00,1.60 10.40,1.60"/>
+    </edge>
+    <edge id="-gneE6" from="W" to="intersection" priority="-1">
+        <lane id="-gneE6_0" index="0" speed="13.89" length="34.60" shape="-45.00,-4.80 -10.40,-4.80"/>
+        <lane id="-gneE6_1" index="1" speed="13.89" length="34.60" shape="-45.00,-1.60 -10.40,-1.60"/>
+    </edge>
+    <edge id="-gneE7" from="S" to="intersection" priority="-1">
+        <lane id="-gneE7_0" index="0" speed="13.89" length="34.60" shape="4.80,-45.00 4.80,-10.40"/>
+        <lane id="-gneE7_1" index="1" speed="13.89" length="34.60" shape="1.60,-45.00 1.60,-10.40"/>
+    </edge>
+    <edge id="gneE4" from="intersection" to="N" priority="-1">
+        <lane id="gneE4_0" index="0" speed="13.89" length="34.60" shape="4.80,10.40 4.80,45.00"/>
+        <lane id="gneE4_1" index="1" speed="13.89" length="34.60" shape="1.60,10.40 1.60,45.00"/>
+    </edge>
+    <edge id="gneE5" from="intersection" to="E" priority="-1">
+        <lane id="gneE5_0" index="0" speed="13.89" length="34.60" shape="10.40,-4.80 45.00,-4.80"/>
+        <lane id="gneE5_1" index="1" speed="13.89" length="34.60" shape="10.40,-1.60 45.00,-1.60"/>
+    </edge>
+    <edge id="gneE6" from="intersection" to="W" priority="-1">
+        <lane id="gneE6_0" index="0" speed="13.89" length="34.60" shape="-10.40,4.80 -45.00,4.80"/>
+        <lane id="gneE6_1" index="1" speed="13.89" length="34.60" shape="-10.40,1.60 -45.00,1.60"/>
+    </edge>
+    <edge id="gneE7" from="intersection" to="S" priority="-1">
+        <lane id="gneE7_0" index="0" speed="13.89" length="34.60" shape="-4.80,-10.40 -4.80,-45.00"/>
+        <lane id="gneE7_1" index="1" speed="13.89" length="34.60" shape="-1.60,-10.40 -1.60,-45.00"/>
+    </edge>
+
+    <junction id="E" type="dead_end" x="45.00" y="0.00" incLanes="gneE5_0 gneE5_1" intLanes="" shape="45.00,0.00 45.00,-6.40 45.00,0.00"/>
+    <junction id="N" type="dead_end" x="0.00" y="45.00" incLanes="gneE4_0 gneE4_1" intLanes="" shape="0.00,45.00 6.40,45.00 0.00,45.00"/>
+    <junction id="S" type="dead_end" x="0.00" y="-45.00" incLanes="gneE7_0 gneE7_1" intLanes="" shape="0.00,-45.00 -6.40,-45.00 0.00,-45.00"/>
+    <junction id="W" type="dead_end" x="-45.00" y="0.00" incLanes="gneE6_0 gneE6_1" intLanes="" shape="-45.00,0.00 -45.00,6.40 -45.00,0.00"/>
+    <junction id="intersection" type="priority" x="0.00" y="0.00" incLanes="-gneE4_0 -gneE4_1 -gneE5_0 -gneE5_1 -gneE7_0 -gneE7_1 -gneE6_0 -gneE6_1" intLanes=":intersection_0_0 :intersection_1_0 :intersection_1_1 :intersection_16_0 :intersection_4_0 :intersection_5_0 :intersection_5_1 :intersection_7_0 :intersection_8_0 :intersection_9_0 :intersection_9_1 :intersection_17_0 :intersection_12_0 :intersection_13_0 :intersection_13_1 :intersection_15_0" shape="-6.40,10.40 6.40,10.40 6.84,8.18 7.40,7.40 8.18,6.84 9.18,6.51 10.40,6.40 10.40,-6.40 8.18,-6.84 7.40,-7.40 6.84,-8.18 6.51,-9.18 6.40,-10.40 -6.40,-10.40 -6.84,-8.18 -7.40,-7.40 -8.18,-6.84 -9.18,-6.51 -10.40,-6.40 -10.40,6.40 -8.18,6.84 -7.40,7.40 -6.84,8.18 -6.51,9.18">
+        <request index="0"  response="0000000000000000" foes="0000000001100000" cont="0"/>
+        <request index="1"  response="0000000000000000" foes="1111100011100000" cont="0"/>
+        <request index="2"  response="0000000000000000" foes="1111100011100000" cont="0"/>
+        <request index="3"  response="0000011000000000" foes="1110011011100000" cont="1"/>
+        <request index="4"  response="0000011000000000" foes="0000011000000000" cont="0"/>
+        <request index="5"  response="0000111000001111" foes="1000111000001111" cont="0"/>
+        <request index="6"  response="0000111000001111" foes="1000111000001111" cont="0"/>
+        <request index="7"  response="0110111000001110" foes="0110111000001110" cont="0"/>
+        <request index="8"  response="0000000000000000" foes="0110000000000000" cont="0"/>
+        <request index="9"  response="0000000000000000" foes="1110000011111000" cont="0"/>
+        <request index="10" response="0000000000000000" foes="1110000011111000" cont="0"/>
+        <request index="11" response="0000000000000110" foes="1110000011100110" cont="1"/>
+        <request index="12" response="0000000000000110" foes="0000000000000110" cont="0"/>
+        <request index="13" response="0000111100001110" foes="0000111110001110" cont="0"/>
+        <request index="14" response="0000111100001110" foes="0000111110001110" cont="0"/>
+        <request index="15" response="0000111001101110" foes="0000111001101110" cont="0"/>
+    </junction>
+
+    <junction id=":intersection_16_0" type="internal" x="-0.00" y="3.73" incLanes=":intersection_3_0 -gneE7_0 -gneE7_1" intLanes=":intersection_5_0 :intersection_5_1 :intersection_7_0 :intersection_8_0 :intersection_9_0 :intersection_9_1 :intersection_13_0 :intersection_13_1 :intersection_15_0"/>
+    <junction id=":intersection_17_0" type="internal" x="0.00" y="-3.73" incLanes=":intersection_11_0 -gneE4_0 -gneE4_1" intLanes=":intersection_0_0 :intersection_1_0 :intersection_1_1 :intersection_5_0 :intersection_5_1 :intersection_7_0 :intersection_13_0 :intersection_13_1 :intersection_15_0"/>
+
+    <connection from="-gneE4" to="gneE6" fromLane="0" toLane="0" via=":intersection_0_0" dir="r" state="M"/>
+    <connection from="-gneE4" to="gneE7" fromLane="0" toLane="0" via=":intersection_1_0" dir="s" state="M"/>
+    <connection from="-gneE4" to="gneE7" fromLane="1" toLane="1" via=":intersection_1_1" dir="s" state="M"/>
+    <connection from="-gneE4" to="gneE5" fromLane="1" toLane="1" via=":intersection_3_0" dir="l" state="m"/>
+    <connection from="-gneE5" to="gneE4" fromLane="0" toLane="0" via=":intersection_4_0" dir="r" state="m"/>
+    <connection from="-gneE5" to="gneE6" fromLane="0" toLane="0" via=":intersection_5_0" dir="s" state="m"/>
+    <connection from="-gneE5" to="gneE6" fromLane="1" toLane="1" via=":intersection_5_1" dir="s" state="m"/>
+    <connection from="-gneE5" to="gneE7" fromLane="1" toLane="1" via=":intersection_7_0" dir="l" state="m"/>
+    <connection from="-gneE6" to="gneE7" fromLane="0" toLane="0" via=":intersection_12_0" dir="r" state="m"/>
+    <connection from="-gneE6" to="gneE5" fromLane="0" toLane="0" via=":intersection_13_0" dir="s" state="m"/>
+    <connection from="-gneE6" to="gneE5" fromLane="1" toLane="1" via=":intersection_13_1" dir="s" state="m"/>
+    <connection from="-gneE6" to="gneE4" fromLane="1" toLane="1" via=":intersection_15_0" dir="l" state="m"/>
+    <connection from="-gneE7" to="gneE5" fromLane="0" toLane="0" via=":intersection_8_0" dir="r" state="M"/>
+    <connection from="-gneE7" to="gneE4" fromLane="0" toLane="0" via=":intersection_9_0" dir="s" state="M"/>
+    <connection from="-gneE7" to="gneE4" fromLane="1" toLane="1" via=":intersection_9_1" dir="s" state="M"/>
+    <connection from="-gneE7" to="gneE6" fromLane="1" toLane="1" via=":intersection_11_0" dir="l" state="m"/>
+
+    <connection from=":intersection_0" to="gneE6" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":intersection_1" to="gneE7" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":intersection_1" to="gneE7" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":intersection_3" to="gneE5" fromLane="0" toLane="1" via=":intersection_16_0" dir="l" state="m"/>
+    <connection from=":intersection_16" to="gneE5" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":intersection_4" to="gneE4" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":intersection_5" to="gneE6" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":intersection_5" to="gneE6" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":intersection_7" to="gneE7" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":intersection_8" to="gneE5" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":intersection_9" to="gneE4" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":intersection_9" to="gneE4" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":intersection_11" to="gneE6" fromLane="0" toLane="1" via=":intersection_17_0" dir="l" state="m"/>
+    <connection from=":intersection_17" to="gneE6" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":intersection_12" to="gneE7" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":intersection_13" to="gneE5" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":intersection_13" to="gneE5" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":intersection_15" to="gneE4" fromLane="0" toLane="1" dir="l" state="M"/>
+
+</net>
